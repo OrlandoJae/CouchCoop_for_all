@@ -2,26 +2,78 @@ body {
   background-color: white;
   background-image: url("img/bg.jpg");
 }
-#menue {
-  position: absolute;
-  bottom:0;
-  left: 50%;
-  height: 150;
-  width: 600;
-  margin-left: -300;
-  margin-right: auto;
-  background-color: black;
-  opacity: 50%;
+header {
+  text-align: center;
+}
+/* Navigationsbarhintergrund-Effekt */
+#navbarbg {
+  background-color: #3ADF00;
+
+  /*Desktop*/
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  /*Transparenz*/
+  -webkit-opacity: 0;
+  -khtml-opacity: 0;
+  -o-opacity: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  /* Transition effect beim runter / hoch Srollen*/
+  -webkit-transition: opacity 0.2s ease-in;/* IE */
+  -moz-transition: opacity 0.2s ease-in;/* Mozilla */
+  -khtml-transition: opacity 0.2s ease-in;/* KTHML */
+  -o-transition: opacity 0.2s ease-in; /*Opera*/
+  -ms-transition: opacity 0.2s ease-in; /*IE*/
+  transition: opacity 0.2s ease-in;   /* allgemein */
+
 }
 
-#menuebar {
-  position: absolute;
-  bottom:0;
-  left: 0;
-  height: 150;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: black;
-  opacity: 50%;
+/*Navigationsbar*/
+#navbar {
+  /*Desktop*/
+  display: inline-block;
+  position: fixed;
+  margin-left: -400px;
+  height: 80px;
+  top: 0px;
+  width: 800px;
+  /*Handy
+  border-color: #3ADF00;
+  border-width: 1px;
+  border-style: solid;
+  */
+}
+
+/* navbar links */
+#navbar a {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-size: 27px;
+  letter-spacing: 0px;
+  color: #3ADF00;
+  text-shadow: 0px 1px 1px #088A08;
+  font-weight: 900;
+  font-variant: small-caps;
+  /* Handy
+  border-color: #3ADF00;
+  border-width: 1px;
+  border-left-style: solid;
+  */
+}
+
+#navbar a:hover {
+  color: black;
+}
+
+#navbar img {
+  /*Dektop*/
+  float: left;
+  margin-top: -30px;
+  height: 150px;
 }
