@@ -1,12 +1,9 @@
+
 body {
-  background-color: white;
-  background-image: url("img/bg.jpg");
-  scroll-behavior: smooth;
-  text-align: center;
+   background-image: url("../img/food1.jpg");
+   text-align: center;
 }
-header {
-  text-align: center;
-}
+
 /* Navigationsbarhintergrund-Effekt */
 #navbarbg {
   background-color: #3ADF00;
@@ -54,10 +51,8 @@ header {
   display: block;
   text-align: center;
   padding: 20px;
-  text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 23px;
-  letter-spacing: 0px;
   color: #3ADF00;
   text-shadow: 0px 1px 1px #088A08;
   font-weight: 900;
@@ -82,15 +77,16 @@ header {
   height: 150px;
 }
 
-
-/*Textbox*/
-#textbox {
-  padding-top: 70px;
-  text-align: left;
+/*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
+#middlebox {
   display: inline-block;
+  top: 0px;
   width: 1000px;
-  top: 100px;
-  text-decoration: none;
+}
+
+/*Variable Textbox*/
+#variablebox{
+  position: absolute;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 20px;
   letter-spacing: 0px;
@@ -100,7 +96,18 @@ header {
   font-variant: small-caps;
 }
 
-/*Variable Textbox*/
-#variablebox{
-  position: relative;
+/*allgemeine Links*/
+a {
+  text-align: center;
+  padding: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-size: 18px;
+  color: black;
+  text-shadow: 0px 1px 1px #088A08;
+  font-weight: 900;
+  font-variant: small-caps;
+}
+
+a:hover {
+  color: inherit;
 }
