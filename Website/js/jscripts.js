@@ -4,7 +4,7 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
-    document.getElementById("navbarbg").style.opacity = 0.2;
+    document.getElementById("navbarbg").style.opacity = 0.4;
   } else {
     document.getElementById("navbarbg").style.opacity = 0;
   }
