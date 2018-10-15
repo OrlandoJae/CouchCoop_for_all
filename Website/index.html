@@ -1,7 +1,8 @@
 <!DOCTYPE>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/style_screen.css" media="screen and (min-width: 1030px)" />
+    <link rel="stylesheet" type="text/css" href="css/style_mobil.css" media="screen and (max-width: 1029px)" />
     <script src="js/jscripts.js"></script>
   </head>
 
@@ -15,42 +16,51 @@
       <div id="navbarbg">
       </div>
 
-      
+
 
       <!--Navigationsleiste-->
       <div id="navbar">
-        <a href="#Login">Login</a>
-        <a href="#Registrieren">Registrieren</a>
+        <div><a href="#Shuffle">Shuffle</a></div>
+        <div><a href="#NoGo's">NoGo's</a></div>
+        <div><a href="#Login">Login</a></div>
         <img src="img/bg.png" alt="What2Eat">
       </div>
 
       <!-- Box die variabel in der Box platziert werden kann (individuel) -->
-
       <div id="variablebox"
-      style="top: 250px; width: 400px; text-align: center; margin-left: 135px">
+      style="top: 250px; width: 450px; text-align: center; margin-left: -400px;">
         Du bist untentschlossen?<br>
-        Drücke auf Schuffel, <br>
+        Lasse dich überraschen und drücke auf Schuffle, <br>
         damit ein zufälliges Rezept generiert wird!
       </div>
 
-      <a href="#Shuffel#">
-        <div id="shuffelbutton"></div>
+      <a href="#Shuffle#">
+        <div class="button" id"shuffleb">Shuffle</div>
+      </a>
+
+      <div id="variablebox"
+      style="top: 400px; width: 450px; text-align: center;margin-left: -400px;">
+        Gibt es Zutaten, die du in einem Gericht nicht möchtest oder verträgst..<br>
+        Lasse es uns wissen und setze deine Go's und NoGo's
+      </div>
+
+      <a href="#Shuffle#">
+        <div class="button" id"nogosb">Shuffle</div>
       </a>
 
       <div id="bottombox">
 
-        <div id="variablebox" style="margin-left: -500px; top: 50px; display: inline-block;">
-          <a href="#Trent1"><img alt"Trend1" src"" width="200px" height="200" border=2></a>
-          <a href="#Trent2"><img alt"Trend2" src"" width="200px" height="200" border=2></a>
-          <a href="#Trent3"><img alt"Trend3" src"" width="200px" height="200" border=2></a>
-          <a href="#Trent4"><img alt"Trend4" src"" width="200px" height="200" border=2></a>
+        <div id="variablebox" style=" top: 50px;">
+          <img alt"Trend1" src"" width="200px" height="200" border=2>
+          <img alt"Trend2" src"" width="200px" height="200" border=2>
+          <img alt"Trend3" src"" width="200px" height="200" border=2>
+          <img alt"Trend4" src"" width="200px" height="200" border=2>
         </div>
 
       </div>
 
 
-      <div id="variablebox"
-      style="top: 1830px; width: auto; text-align: right;">
+      <div id="variablebox" style="top: 1830px; width: auto; text-align: right;">
         <a href="#Hilfe">Hilfe</a>
       </div>
 

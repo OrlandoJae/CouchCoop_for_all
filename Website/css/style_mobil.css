@@ -1,0 +1,83 @@
+
+body {
+   background-color: white;
+}
+
+
+/*Navigationsbar*/
+#navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+/* navbar links */
+#navbar a {
+  font-size: 23px;
+  color: #00ad00;
+  text-shadow: 0px 1px 1px #088A08;
+  border-color: #3ADF00;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/*Navigationsleiste Links beim drübergehen*/
+#navbar a:hover {
+  color: black;
+}
+
+/*Navigationsleiste Bild*/
+#navbar img {
+  display: none;
+}
+
+/*mittlere Box nicht benötigt in der mobil Sarstellung*/
+#middlebox {
+  text-align: center;
+}
+
+/*Variable Textbox*/
+#variablebox{
+  display: none;
+}
+
+/*allgemeine Links*/
+a {
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
+  font-variant: small-caps;
+}
+
+a:hover {
+  color: #848484;
+}
+
+/*Shuffelbutton nicht im Mobil*/
+#shufflebutton {
+display: none;
+
+}
+
+/* ÜBerschriften */
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-size: 30px;
+  color: black;
+  text-shadow: 0px 1px 1px #088A08;
+  font-variant: small-caps;
+  font-weight: 100;
+}
+
+
+/* Unterer Bereich */
+#bottombox2{
+  display: none;
+}

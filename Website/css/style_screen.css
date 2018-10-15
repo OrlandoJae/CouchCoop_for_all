@@ -1,7 +1,7 @@
 
 body {
    text-align: center;
-   background-image: linear-gradient(to top, #72e04b 0%, #A9E2F3 10%);
+   background-image: linear-gradient(to top, #585858 0%, #BDBDBD 10%);
    background-color: black;
    background-repeat: no-repeat;
 }
@@ -85,6 +85,7 @@ body {
 /*Variable Textbox*/
 #variablebox{
   position: absolute;
+  display: inline-block;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 20px;
   color: black;
@@ -96,7 +97,7 @@ body {
 /*allgemeine Links*/
 a {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 18px;
@@ -110,19 +111,30 @@ a:hover {
 }
 
 /*Shuffelbutton*/
-#shuffelbutton {
+#button {
   position: absolute;
-  background-image: url(../img/shuffel.png);
+  display: inline-block;
   background-size: cover;
-  top: 270px;
   width: 200px;
   height: 57px;
-  margin-left: 635px;
+  margin-left: 90px;
   background-color: #3ADF00;
   border-radius : 10px;
+  font-size: 23px;
+  color: black;
+}
+#shuffleb {
+  background-image: url(../img/shuffel.png);
+  top: 270px;
 }
 
-#shuffelbutton:hover{
+/*NoGo's Button*/
+#nogosb {
+  background-image: url(../img/shuffel.png);
+  top: 420px;
+}
+
+#button:hover{
   background-color: #58FA58;
 }
 
@@ -145,6 +157,6 @@ h1 {
   bottom: -800px;
   height: 800px;
   width: 100%;
-  background-image: linear-gradient(to bottom, #886A08 0%, #3B240B 70%);
+  background-image: linear-gradient(to bottom, #585858 0%, #BDBDBD 70%);
 
 }
