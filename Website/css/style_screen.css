@@ -1,7 +1,7 @@
 
 body {
    text-align: center;
-   background-image: linear-gradient(to top, #585858 0%, #BDBDBD 10%);
+   background-image: linear-gradient(to top, #BDBDBD 0%, white 30%);
    background-color: black;
    background-repeat: no-repeat;
 }
@@ -163,6 +163,6 @@ h1 {
   bottom: -800px;
   height: 800px;
   width: 100%;
-  background-image: linear-gradient(to bottom, #585858 0%, #BDBDBD 70%);
+  background-image: linear-gradient(to top, #585858 0%, #BDBDBD 70%);
 
 }
