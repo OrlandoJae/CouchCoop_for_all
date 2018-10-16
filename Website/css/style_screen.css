@@ -40,11 +40,6 @@ body {
   height: 80px;
   top: 0px;
   width: 1000px;
-  /*Handy
-  border-color: #3ADF00;
-  border-width: 1px;
-  border-style: solid;
-  */
 }
 
 /* navbar links */
@@ -54,12 +49,6 @@ body {
   font-size: 23px;
   color: #00ad00;
   text-shadow: 0px 1px 1px #088A08;
-
-  /* Handy
-  border-color: #3ADF00;
-  border-width: 1px;
-  border-left-style: solid;
-  */
 }
 
 /*Navigationsleiste Links beim drübergehen*/
@@ -69,10 +58,9 @@ body {
 
 /*Navigationsleiste Bild*/
 #navbar img {
-  /*Dektop*/
   float: left;
-  margin-top: -100px;
-  height: 300px;
+  margin-top: 0px;
+  height: 80px;
 }
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
@@ -83,15 +71,37 @@ body {
 }
 
 /*Variable Textbox*/
-#variablebox{
+.variablebox{
   position: absolute;
   display: inline-block;
+  text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 20px;
   color: black;
   text-shadow: 0px 1px 1px #088A08;
   font-weight: 900;
   font-variant: small-caps;
+}
+
+#I{
+  top: 250px;
+  width: 450px;
+  text-align: center;
+  margin-left: -400px;}
+#II{
+  top: 400px;
+  width: 450px;
+  text-align:
+  center;margin-left: -400px;}
+#III{
+
+}
+#VI{
+  top: 50px;
+}
+#IV{
+  top: 1830px;
+  text-align: right;
 }
 
 /*allgemeine Links*/
@@ -111,39 +121,35 @@ a:hover {
 }
 
 /*Shuffelbutton*/
-#button {
+.button {
   position: absolute;
   display: inline-block;
   background-size: cover;
-  width: 200px;
-  height: 57px;
-  margin-left: 90px;
+  width 160px;
+  margin-left: 200px;
   background-color: #3ADF00;
-  border-radius : 10px;
-  font-size: 23px;
-  color: black;
-}
-#shuffleb {
-  background-image: url(../img/shuffel.png);
-  top: 270px;
+  border-radius : 4px;
 }
 
-/*NoGo's Button*/
-#nogosb {
-  background-image: url(../img/shuffel.png);
-  top: 420px;
+.button a {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
 }
-
-#button:hover{
+.button:hover{
   background-color: #58FA58;
 }
+
+#eins { top:280px; }
+#zwei { top:430px; }
+#drei { display: none; }
+
 
 /* ÜBerschriften */
 h1 {
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 30px;
   color: black;
-  text-shadow: 0px 1px 1px #088A08;
+  text-shadow: 0px 1px 1px black;
   font-variant: small-caps;
   font-weight: 100;
 }
