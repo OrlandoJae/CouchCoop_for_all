@@ -24,16 +24,14 @@ body {
 /*Navigationsleiste Links beim drübergehen*/
 #navbar div:hover{
   background-color:#3ADF00;
-  color: black;
 }
-
 
 #navbar div:hover > a {
   color: black;
 }
 /* navbar links */
 #navbar a {
-  font-size: 23px;
+  font-size: 53px;
   color: #00ad00;
   text-shadow: 0px 1px 1px #088A08;
 
@@ -45,7 +43,7 @@ body {
 #navbar img {
   display:  inline-block;
   position: fixed;
-  width: 400px;
+  width: 800px;
   left: 50%;
   margin-left: -200px;
   top: 0px;
@@ -77,12 +75,14 @@ body {
 #I{display: none;}
 #II{display: none;}
 #III{
-  background-color: blue;
   display: flex;
   position: fixed;
   justify-content: center;
-  width: 100%;
-  top: 50%;
+  margin-top: 50%;
+  left: 8px;
+  right: 6px;
+  top: 0px;
+  bottom: 0px;
 }
 #VI{display: none;}
 #IV{display: none;}
@@ -94,7 +94,7 @@ a {
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 18px;
-  color: white;
+  color: #088A08;
   font-weight: 900;
   font-variant: small-caps;
 }
@@ -120,25 +120,36 @@ h1 {
 }
 
 .button {
-  position: absolute;
-  display: inline-block;
+  position: relative;
   background-size: cover;
-  width 150px;
+  width: 400px;
+  height: 200px;
   margin-left: 200px;
-  background-color: #3ADF00;
-  border-radius : 4px;
+  border-color: #3ADF00;
+  border-width: 1px;
+  border-style: solid;
+  padding-top: 100px;
+  color: #088A08;
+  text-shadow: 0px 1px 1px #088A08;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+
 }
 
-#eins {display: none;}
-#zwei {display: none;}
-#drei {
-  position: absolute;
+#buttoneins {display: none;}
+#buttonzwei {display: none;}
+#buttondrei {
+  flex-grow: 1;
   margin-left: 0px;
-  width: 300px;
-  height: 50px;
 }
-#drei a{
-    font-size: 30px;
+#buttondrei a{
+    font-size: 60px;
+}
+#buttonvier{
+    flex-grow: 1;
+  margin-left: 0px;
+}
+#buttonvier a{
+    font-size: 60px;
 }
 
 
