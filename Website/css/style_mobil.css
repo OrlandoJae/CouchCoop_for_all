@@ -9,41 +9,19 @@ body {
   position: fixed;
   display: flex;
   justify-content: center;
+  width: 100%;
   bottom: 10px;
-  left: 8px;
-  right: 6px;
-}
-
-#navbar div {
-  flex-grow: 1;
-  height: auto;
+  left: 0px;
   border-color: #3ADF00;
   border-width: 1px;
   border-style: solid;
 }
-/*Navigationsleiste Links beim drübergehen*/
-#navbar div:hover{
-  background-color:#3ADF00;
-}
-
-#navbar div:hover > a {
-  color: black;
-}
-/* navbar links */
-#navbar a {
-  font-size: 53px;
-  color: #00ad00;
-  text-shadow: 0px 1px 1px #088A08;
-
-}
-
-
 
 /*Navigationsleiste Bild*/
 #navbar img {
   display:  inline-block;
   position: fixed;
-  width: 800px;
+  width: 500px;
   left: 50%;
   margin-left: -200px;
   top: 0px;
@@ -52,8 +30,7 @@ body {
 /*mittlere Box nicht benötigt in der mobil Sarstellung*/
 #middlebox {
   text-align: center;
-  height: 100%;
-  width: 100%;
+
   margin-top: -5px;
   border-color: #3ADF00;
   border-width: 1px;
@@ -72,25 +49,22 @@ body {
   font-variant: small-caps;
 }
 
-#I{display: none;}
-#II{display: none;}
-#III{
+#indexI{display: none;}
+#indexII{display: none;}
+#indexIII{
   display: flex;
   position: fixed;
   justify-content: center;
-  margin-top: 50%;
   left: 8px;
   right: 6px;
-  top: 0px;
-  bottom: 0px;
+
 }
-#VI{display: none;}
-#IV{display: none;}
+#indexVI{display: none;}
+#indexIV{display: none;}
 
 /*allgemeine Links*/
 a {
   text-align: center;
-  padding: 20px;
   text-decoration: none;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 18px;
@@ -100,14 +74,9 @@ a {
 }
 
 a:hover {
-  color: #848484;
+  color: #088A08;
 }
 
-/*Shuffelbutton nicht im Mobil*/
-#shufflebutton {
-display: none;
-
-}
 
 /* ÜBerschriften */
 h1 {
@@ -122,38 +91,40 @@ h1 {
 .button {
   position: relative;
   background-size: cover;
-  width: 400px;
-  height: 200px;
-  margin-left: 200px;
   border-color: #3ADF00;
   border-width: 1px;
   border-style: solid;
-  padding-top: 100px;
   color: #088A08;
   text-shadow: 0px 1px 1px #088A08;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
 
 }
 
-#buttoneins {display: none;}
-#buttonzwei {display: none;}
-#buttondrei {
+#indexnav1 {
   flex-grow: 1;
-  margin-left: 0px;
+  height: auto;
+  border-color: #3ADF00;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
 }
-#buttondrei a{
-    font-size: 60px;
+
+#indexnav1:hover{
+  background-color:#3ADF00;
 }
-#buttonvier{
-    flex-grow: 1;
-  margin-left: 0px;
+#navbar a{
+  flex-grow: 1;
+  font-size: 30px;
 }
-#buttonvier a{
-    font-size: 60px;
-}
+
+#shuffleindexzentrum { display: none; }
+#nogosindexzentrum { display: none; }
+#registrationintexzentrum { display: none; }
+#loginindexzentrum{ display: none; }
+
 
 
 /* Unterer Bereich */
-#bottombox2{
+#bottombox{
   display: none;
 }
