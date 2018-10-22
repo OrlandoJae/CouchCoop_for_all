@@ -1,66 +1,27 @@
 <!DOCTYPE>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="css/style_screen.css" media="screen and (min-width: 1030px)" />
-    <link rel="stylesheet" type="text/css" href="css/style_mobil.css" media="screen and (max-width: 1029px)" />
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="js/jscripts.js"></script>
-  </head>
+</head>
 
-  <body>
-
+<body>
 
     <!-- mittlerer Bereich (dynamisch)-->
-    <div id="middlebox">
+    <div class="middlebox">
 
-      <!--gründer Hintergrund in der Navigationsleiste-->
-      <div id="navbarbg">
-      </div>
-
-      <!--Navigationsleiste-->
-      <div id="navbar">
-        <div><a href="#Shuffle">Shuffle</a></div>
-        <div><a href="#NoGo's">NoGo's</a></div>
-        <div><a href="#Login">Login</a></div>
-        <img id="logo" src="img/bg.png" alt="What2Eat">
-      </div>
-
-      <!-- Box die variabel in der Box platziert werden kann (individuel) -->
-      <div id="I" class="variablebox" >
-        Du bist untentschlossen?<br>
-        Lasse dich überraschen und drücke auf Schuffle, <br>
-        damit ein zufälliges Rezept generiert wird!
-      </div>
-
-      <div id="II" class="variablebox">
-        Gibt es Zutaten, die du in einem Gericht nicht möchtest oder verträgst..<br>
-        Lasse es uns wissen und setze deine Go's und NoGo's
-      </div>
-
-      <div id="buttoneins" class="button"><a href="#Shuffle#">Shuffle</a></div>
-      <div id="buttonzwei" class="button"><a href="#NoGo's">NoGo's</a></div>
-
-      <div  id="III" class="variablebox">
-        <div id="buttondrei" class="button"><a href="#Registration">Registration</a></div>
-        <div id="buttonvier" class="button"><a href="#Login">Login</a></div>
-      </div>
-
-      <div id="bottombox">
-
-        <div id="VI" class="variablebox">
-          <img alt"Trend1" src"" width="200px" height="200" border=2>
-          <img alt"Trend2" src"" width="200px" height="200" border=2>
-          <img alt"Trend3" src"" width="200px" height="200" border=2>
-          <img alt"Trend4" src"" width="200px" height="200" border=2>
+        <div class="navbar">
+            <a id="shufflenav" href="#Shuffle">Shuffle</a>
+            <a id="nogosnav" href="#NoGo's">NoGo's</a>
+            <a id="loginnav" href="#Login">Login</a>
+            <a id="ragistrationnav" href="#Registration">Registration</a>
         </div>
 
-      </div>
-
-
-      <div id="IV" class="variablebox">
-        <a href="#Hilfe">Hilfe</a>
-      </div>
+        <img id="logo" src="img/bg.png" alt="What2Eat">
 
     </div>
 
-  </body>
+
+</body>
 </html>

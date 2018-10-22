@@ -1,0 +1,142 @@
+/*Alle Medien...*/
+/*allgemeine Ausrichtung (sonst ist es mit Abstand zum Rand beim body)*/
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+/*body*/
+    body {
+        background-image: linear-gradient(to top, bisque 10%, white 30%);
+        text-align: center;
+    }
+
+/*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
+    .middlebox {
+        display: inline-block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border-color: #3ADF00;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+/*Navigationsbar*/
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        position: fixed;
+    }
+
+    .navbar > a {
+        font-size: 30px;
+        color: #088A08;
+        text-shadow: 0px 1px 1px #088A08;
+    }
+
+/*allgemeine Links*/
+    a {
+        padding: 10px;
+        text-decoration: none;
+        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+        font-size: 23px;
+        color: black;
+        font-weight: 900;
+        font-variant: small-caps;
+    }
+
+    a:hover {
+        color: #3ADF00;
+    }
+
+
+
+/*Handys-----------------------------------------------------------------------------------------------------*/
+@media (max-width: 700px) {
+
+/*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
+    .middlebox {
+        display: flex;
+    }
+
+/*Navigationsbar*/
+    .navbar {
+        justify-content: center;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        border-color: #3ADF00;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+/*Navbar links*/
+    .navbar > a {
+        flex-grow: 1;
+    }
+
+/*logo*/
+    #logo {
+        position: ralative;
+        height: 80px;
+    }
+
+    #ragistrationnav {display: none;}
+
+
+
+}
+/*Tablets-----------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 700px) {
+
+    /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
+    .middlebox {
+        width: 680px;
+    }
+
+    /*Navigationsbar*/
+    .navbar {
+        width: 676px;
+    }
+
+    /*logo*/
+    #logo {
+        position: fixed;
+        margin-left: -360px;
+        height: 60px;
+    }
+    #shufflenav {display: none;}
+    #nogosnav {display: none;}
+
+
+
+
+}
+/*Desktop-----------------------------------------------------------------------------------------------------*/
+@media only screen and (min-width: 1030px) {
+
+    /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
+    .middlebox {
+        width: 1000px;
+    }
+
+    /*Navigationsbar*/
+    .navbar {
+        width: 996px;
+    }
+
+    /*logo*/
+    #logo {
+        position: fixed;
+        margin-left: -520px;
+        height: 60px;
+    }
+
+    #shufflenav {display: none;}
+    #nogosnav {display: none;}
+
+
+
+}
