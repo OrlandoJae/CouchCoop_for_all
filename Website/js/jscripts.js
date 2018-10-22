@@ -9,3 +9,13 @@ function scrollFunction() {
     document.getElementById("navbarbg").style.opacity = 0;
   }
 }
+
+/*Checkboxen erscheinen lassen*/
+function show() {
+    var x = document.getElementById("checkbox");
+    if (x.style.display === "flex") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "flex";
+    }
+}
