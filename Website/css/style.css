@@ -31,9 +31,9 @@
     }
 
     .navbar > a {
-        font-size: 30px;
-        color: #088A08;
-        text-shadow: 0px 1px 1px #088A08;
+        font-size: 28px;
+        color: #3ADF00;
+        text-shadow: 0px 1px 1px #9FF781;
     }
 
 /*allgemeine Links*/
@@ -48,7 +48,7 @@
     }
 
     a:hover {
-        color: #3ADF00;
+        color: #848484;
     }
 
 
