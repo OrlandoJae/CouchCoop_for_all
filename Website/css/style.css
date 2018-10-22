@@ -3,6 +3,8 @@
     *{
         margin: 0;
         padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
 
@@ -11,6 +13,30 @@
         background-image: linear-gradient(to top, bisque 10%, white 30%);
         text-align: center;
     }
+
+    /*allgemeine Links*/
+        a {
+            padding: 10px;
+            text-decoration: none;
+            font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+            font-size: 23px;
+            font-weight: 900;
+            font-variant: small-caps;
+        }
+
+
+
+    /*allgemeine paragrph*/
+        p {
+            padding: 10px;
+            text-decoration: none;
+            font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+            font-size: 18px;
+            color: black;
+            font-weight: 900;
+            font-variant: small-caps;
+        }
+
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
@@ -36,29 +62,39 @@
         text-shadow: 0px 1px 1px #9FF781;
     }
 
-/*allgemeine Links*/
-    a {
-        padding: 10px;
-        text-decoration: none;
-        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-        font-size: 23px;
-        color: black;
-        font-weight: 900;
-        font-variant: small-caps;
+    .navbar > a:hover {
+        color: #04B404;
     }
 
-    a:hover {
-        color: #848484;
+    .textbox {
+      top: 90px;
     }
 
+    .button {
+        height: auto;
+      	background-color: #3ADF00;
+      	color: #f2f2f2;
+      	font-size: 25px;
+        border-radius: 3px;
+      	transition: all 500ms ease;
+    }
+    .button:hover {
+        color: #3ADF00;
+      	background-color: white;
+        text-shadow: 0px 1px 1px #9FF781;
+      	box-shadow: inset 0 0 0 3px #3ADF00;
+    }
 
 
 /*Handys-----------------------------------------------------------------------------------------------------*/
 @media (max-width: 700px) {
-
+    body {
+        position: fixed;
+        overflow:hidden;
+    }
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
-        display: flex;
+        position: fixed;
     }
 
 /*Navigationsbar*/
@@ -78,13 +114,20 @@
     }
 
 /*logo*/
-    #logo {
-        position: ralative;
-        height: 80px;
-    }
+    #logo   {}
+    #logo > img {height: 80px;}
 
     #ragistrationnav {display: none;}
 
+    #desktop_index{display: none;}
+
+    #mobil_index{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
 
 }
@@ -102,7 +145,7 @@
     }
 
     /*logo*/
-    #logo {
+    #logo > img {
         position: fixed;
         margin-left: -360px;
         height: 60px;
@@ -110,8 +153,21 @@
     #shufflenav {display: none;}
     #nogosnav {display: none;}
 
+    #desktop_index{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    #desktop_index > p{
+        flex-grow: 1;
+        padding-bottom: 50px;
+    }
+    #desktop_index > p.text{width: 70%;}
+    #desktop_index > p.link{width: 30%;}
 
-
+    #mobil_index{display: none;}
 
 }
 /*Desktop-----------------------------------------------------------------------------------------------------*/
@@ -128,15 +184,8 @@
     }
 
     /*logo*/
-    #logo {
-        position: fixed;
+    #logo > img {
         margin-left: -520px;
-        height: 60px;
     }
-
-    #shufflenav {display: none;}
-    #nogosnav {display: none;}
-
-
 
 }
