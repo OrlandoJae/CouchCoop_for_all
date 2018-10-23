@@ -8,6 +8,8 @@ function scrollFunction() {
   } else {
     document.getElementById("navbarbg").style.opacity = 0;
   }
-}
+};
 
-}
+function showAllergien() {
+  document.getElementById('allergien-dropdown').classList.toggle("show");
+};
