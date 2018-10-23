@@ -39,7 +39,16 @@ body {
 
 }
 
-
+/*Navigationsleiste Überschrift*/
+#navbar h1 {
+  display:  inline-block;
+  position: fixed;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  top: 0px;
+  font-size: 80px;
+}
 
 /*Navigationsleiste Bild*/
 #navbar img {
@@ -108,6 +117,66 @@ a:hover {
 display: none;
 
 }
+/*DROPDOWN*/
+/*Button der Dropdown-Menü öffnet*/
+.dropdownbutton {
+  position: absolute;
+  display: inline-block;
+  background-size: cover;
+  width 150px;
+  margin-left: 200px;
+  background-color: #3ADF00;
+  border-radius : 4px;
+}
+/*Bezieht sich auf Aussehen des Dropdowns*/
+.dropdownbuttoncontent {
+  display: none;
+  background-color: #3ADF00;
+  position: absolute;
+}
+
+/*.dropdownbuttoncontent a {
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-size: 18px;
+  color: #3ADF00;
+  font-weight: 900;
+  font-variant: small-caps;
+}*/
+
+/*sorgt für öffnen des Dropdowns*/
+.dropdownbutton:hover .dropdownbuttoncontent {
+  display: block;
+}
+
+/*CHECKBOX*/
+.checkbox {
+  position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #bbf9bb;
+}
+
+li {
+  display: block;
+}
+
+li input:checked ~ .checkbox {
+  background-color: #3ADF00;
+}
+
+li input {
+  display: none;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
 /* ÜBerschriften */
 h1 {
@@ -141,6 +210,12 @@ h1 {
     font-size: 30px;
 }
 
+#allergien {
+  position: absolute;
+  margin-left: 0px;
+  width: 300px;
+  height: 50px;
+}
 
 /* Unterer Bereich */
 #bottombox2{
