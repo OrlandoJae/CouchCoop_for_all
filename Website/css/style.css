@@ -10,9 +10,7 @@
 
 /*body*/
     body {
-        background-image: linear-gradient(to top, bisque 10%, white 30%);
         background-repeat: no-repeat;
-        background-color: bisque;
         text-align: center;
         min-height: 600px;/*jenachdem wie viel Inhalt in der Box ist größer !!*/
     }
@@ -40,56 +38,7 @@
             font-variant: small-caps;
         }
 
-        ul
-        {
-          position: relative;
-          flex-grow: 1;
-          background:;
-          padding: 10px 20px;
-        }
-        ul li{
-          list-style: none;
-          position: relative;
-          padding: 10px 0;
-        }
-        ul li:last-child{
-        }
-        ul li label{
-          font-size: 18px;
-          cursor: pointer;
-        }
-        ul li label input{
-          opacity: 0; /*für alle browser machen*/
-          cursor: pointer;
-        }
-        ul li label .check{
-          position: absolute;
-          top: 10px;
-          left: 0;
-          width: 20px;
-          height: 20px;
-          background: #000;
-          display: block;
-          box-sizing: border-box;
-          border-radius: 4px;
-        }
-        ul li label .check:before{
-          content: '';
-          position: absolute;
-          top: 3px;
-          left: 3px;
-          right: 3px;
-          bottom: 3px;
-          background: #000b10;
-          border-radius: 2px;
-          transition: 0.5s;
-          transform: translate(350px);/*gucken wie ich dass anders mache*/
-        }
-        ul li label input:checked ~ .check:before{
-          background: #adff00;
-          box-shadow: 0 0 15px #adff00;
-          transform: translate(0px);/*für alle Browser machen*/
-        }
+
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
@@ -129,7 +78,7 @@
       	background-color: #3ADF00;
       	color: #f2f2f2;
       	font-size: 25px;
-      	transition: all 500ms ease;
+      	transition: all 400ms ease;
     }
     .button:hover {
         color: #3ADF00;
