@@ -22,7 +22,7 @@
         padding: 10px;
         text-decoration: none;
         font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-        font-size: 15px;
+        font-size: 23px;
         font-weight: 900;
         font-variant: small-caps;
     }
@@ -30,15 +30,21 @@
 
 
     /*allgemeine paragrph*/
-
-    .text {
-      font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-      color: black;
-      font-weight: 900;
-      font-variant: small-caps;
-      text-shadow: 0px 0px 1px black;
+    p {
+        padding: 10px;
+        text-decoration: none;
+        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+        font-size: 18px;
+        color: black;
+        font-weight: 900;
+        font-variant: small-caps;
     }
 
+    input[type=text]{
+      width: 500px;
+      height: 50px;
+
+    }
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
@@ -70,7 +76,7 @@
 
     .navbar > a:hover {
         color:#01DF01;
-        text-shadow: 0px 1px 2px #64FE2E;
+        text-shadow: 0px 1px 1px #64FE2E;
     }
 
     .textbox {
@@ -78,6 +84,8 @@
     }
 
     .button {
+        margin-top: 15px;
+        margin-bottom: 15px;
         height: auto;
       	background-color:  #64FE2E;
       	color: white;
@@ -209,7 +217,7 @@
     }
 
 
-    .text {font-size: 15px;}
+    .textbox > p {font-size: 27px;}
 
     /*logo*/
     #logo > a > img{
