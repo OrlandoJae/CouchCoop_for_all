@@ -136,6 +136,10 @@
       margin-left: 10px;
       cursor: pointer;
     }
+
+    .dropdown a {
+      font-size: 100%;
+    }
     /*Design, wenn Maus über Button hovert*/
     .dropdown:hover {
         color: #3ADF00;
@@ -183,6 +187,11 @@
      border-style: double;
      border-color: #3ADF00;
      border-radius: 3px;
+    }
+
+    .container a {
+      font-size: 4.5vw;
+      font-weight: 600;
     }
 
     /* Standartcheckbox des Browsers verstecken */
@@ -260,8 +269,8 @@
       margin-top: 10vh;
       display: inline-block;
       margin-top: 10vh;
-      margin-left: 5vw;
-      margin-right: 5vw;
+      margin-left: 3vw;
+      margin-right: 3vw;
       padding: 0;
       width: 30vw;
       height: 8vh;
@@ -281,7 +290,8 @@
     }
 
     .bestaetigungsBereich a {
-      font-size: 100%;
+      font-size: 90%;
+      padding: 0;
     }
 
 
