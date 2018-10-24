@@ -169,10 +169,11 @@
     /* Checkboxdesign */
     .checkmark {
      position: absolute;
-     top: 0;
-     left: 0;
-     height: 20px;
-     width: 20px;
+     top: 5%;
+     bottom: 5%;
+     left: 2px;
+     height: 90%;
+     width: 7%;
      background-color: #eee;
     }
 
@@ -200,10 +201,10 @@
 
     /* Design des Häkchens */
     .container .checkmark:after {
-     left: 6px;
-     top: 3px;
-     width: 5px;
-     height: 10px;
+     left: 35%;
+     top: 15%;
+     width: 20%;
+     height: 50%;
      border: solid white;
      border-width: 0 3px 3px 0;
      -webkit-transform: rotate(45deg);
