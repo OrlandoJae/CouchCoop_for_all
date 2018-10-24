@@ -20,6 +20,6 @@ function showZutaten() {
   /*document.getElementById('allergien').classList.toggle("hide");*/
   /*document.getElementById('essgewohnheiten').classList.toggle("hide");*/
 };
-funcion suchFunktion() {
-  
+function suchFunktion() {
+
 }
