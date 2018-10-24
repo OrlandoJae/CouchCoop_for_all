@@ -10,9 +10,7 @@
 
 /*body*/
     body {
-        background-image: linear-gradient(to bottom, #FFFFFF 10%, #81F781 99%);
         background-repeat: no-repeat;
-        background-color: #81F781;
         text-align: center;
         min-height: 600px;/*jenachdem wie viel Inhalt in der Box ist größer !!*/
     }
@@ -22,7 +20,7 @@
         padding: 10px;
         text-decoration: none;
         font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-        font-size: 15px;
+        font-size: 23px;
         font-weight: 900;
         font-variant: small-caps;
     }
@@ -30,24 +28,28 @@
 
 
     /*allgemeine paragrph*/
+    p {
+        padding: 10px;
+        text-decoration: none;
+        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+        font-size: 18px;
+        color: black;
+        font-weight: 900;
+        font-variant: small-caps;
+    }
 
-    .text {
-      font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-      color: black;
-      font-weight: 900;
-      font-variant: small-caps;
-      text-shadow: 0px 0px 1px black;
+    input[type=text]{
+      width: 500px;
+      height: 50px;
+
     }
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
         display: inline-block;
         position: relative;
-        top:60px;
         height: auto;
         width: 100%;
-        min-height: 600px; /*jenachdem wie viel Inhalt in der Box ist größer !!*/
-        box-shadow: 0px 3px 5px 0px #3ADF00;
         border-color: #64FE2E;
         border-width: 2px;
         border-style: solid;
@@ -69,7 +71,7 @@
 
     .navbar > a:hover {
         color:#01DF01;
-        text-shadow: 0px 1px 2px #64FE2E;
+        text-shadow: 0px 1px 1px #64FE2E;
     }
 
     .textbox {
@@ -77,6 +79,8 @@
     }
 
     .button {
+        margin-top: 15px;
+        margin-bottom: 15px;
         height: auto;
       	background-color:  #64FE2E;
       	color: white;
@@ -107,7 +111,6 @@
     }
 
     #logo   {
-      position: fixed;
       top: 0px;
     }
 
@@ -124,8 +127,8 @@
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
         position: fixed;
-        border: none;
         overflow-y:hidden;
+        height: 100%;
     }
 
 /*Navigationsbar*/
@@ -176,6 +179,13 @@
     /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
         width: 680px;
+        border-color: #64FE2E;
+        border-width: 2px;
+        border-style: solid;
+        box-shadow: 0px 3px 5px 0px #3ADF00;
+        top:60px;
+        min-height: 600px; /*jenachdem wie viel Inhalt in der Box ist größer !!*/
+
     }
     /* Navigationsbarhintergrund-Effekt */
     #navbarbg {
@@ -207,10 +217,11 @@
         transition: opacity 0.2s ease-in;   /* allgemein */
     }
 
-
-    .text {font-size: 20px;}
-
     /*logo*/
+    #logo   {
+      position: fixed;
+    }
+
     #logo > a > img{
         height: 60px;
     }
