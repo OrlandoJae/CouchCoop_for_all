@@ -106,6 +106,7 @@
       margin-top: 4vh;
       margin-right: 14px;
       margin-left: 10px;
+      cursor: pointer;
     }
 
     .dropdown:hover {
@@ -117,17 +118,95 @@
 
     .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
-}
+    margin-right: 14px;
+    margin-left: 10px;
+    }
 
-  .show {
-    display: block;
-  }
+    .dropdown-content a {
+      font-size: 4.5vw;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    /*Checkboxdesign*/
+    /* Design des Schriftzuges */
+    .container {
+     display: block;
+     position: relative;
+     padding-left: 35px;
+     margin-bottom: 12px;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+    }
+
+    /* Standartcheckbox des Browsers verstecken */
+    .container input {
+     position: absolute;
+     opacity: 0;
+     cursor: pointer;
+     height: 0;
+     width: 0;
+    }
+
+    /* Checkboxdesign */
+    .checkmark {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 25px;
+     width: 25px;
+     background-color: #eee;
+    }
+
+    /* Ändern der Farbe der Checkbox bei Mousehovern */
+    .container:hover input ~ .checkmark {
+     background-color: #ccc;
+    }
+
+    /* Design wenn Checkbox aktiviert */
+    .container input:checked ~ .checkmark {
+     background-color: #3ADF00;
+    }
+
+    /* Sorgt für Benutzbarkeit der Checkbox */
+    .checkmark:after {
+     content: "";
+     position: absolute;
+     display: none;
+    }
+
+    /* Zeigt Häkchen, wenn Checkbox aktiviert*/
+    .container input:checked ~ .checkmark:after {
+     display: block;
+    }
+
+    /* Design des Häkchens */
+    .container .checkmark:after {
+     left: 9px;
+     top: 5px;
+     width: 5px;
+     height: 10px;
+     border: solid white;
+     border-width: 0 3px 3px 0;
+     -webkit-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
+    }
 
 /*sollte das Fenster zu klein sein werden einige sachen entfernt (zur besseren darstellung)*/
 @media (max-width: 700px) and (max-height: 130px){

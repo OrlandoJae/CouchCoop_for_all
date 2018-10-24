@@ -26,18 +26,43 @@
             </a>
         </div>
 
+        <!-- Bereich der Buttons -->
         <div id="mobil_index">
 
                 <button id="allergien" class="dropdown" onclick="showAllergien()">
+                  <!-- Beschriftung des Buttons -->
                   <a>Unverträglichkeiten</a>
-                  <div id="allergien-dropdown" class="dropdown-content">
-                    This is a test.
-                  </div>
                 </button>
+                <div id="allergien-dropdown" class="dropdown-content">
+                  <!-- Inhalt des Dropdowns -->
+                  <label class="container">
+                    <a>Laktoseintoleranz</a>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
 
-                <div class="dropdown" href="#Essgewohnheiten">
-                  <a>Essgewohnheiten</a>
+                  <label class="container">
+                    <a>Nussalergie</a>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container">
+                    <a>Glutenunverträglichkeit</a>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+
+                  <label class="container">
+                    <a>Weitere..</a>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
                 </div>
+
+                <button id="essgewohnheiten"  class="dropdown" href="#Essgewohnheiten">
+                  <a>Essgewohnheiten</a>
+                </button>
 
         </div>
 
