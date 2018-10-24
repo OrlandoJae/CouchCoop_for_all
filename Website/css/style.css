@@ -39,7 +39,6 @@
       text-shadow: 0px 0px 1px black;
     }
 
-
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
         display: inline-block;
@@ -209,7 +208,7 @@
     }
 
 
-    .text {font-size: 15px;}
+    .text {font-size: 20px;}
 
     /*logo*/
     #logo > a > img{
