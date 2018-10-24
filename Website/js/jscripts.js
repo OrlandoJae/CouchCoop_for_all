@@ -5,6 +5,7 @@ function showAllergien() {
   document.getElementById('allergien-dropdown').classList.toggle("show");
   document.getElementById('essgewohnheiten').classList.toggle("hide");
   document.getElementById('einzelneZutaten').classList.toggle("hide");
+  document.getElementById('bestaetige').classList.toggle("hide");
 };
 
 /*Essgewohnheiten*/

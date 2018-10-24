@@ -163,14 +163,6 @@
     .dropdown-content a {
       font-size: 4.5vw;
     }
-    /* benötigte Klasse für JS-Funktion*/
-    .show {
-      display: block;
-    }
-    /* benötigte Klasse für JS-Funktion*/
-    .hide {
-      display: none;
-    }
 
     /*Checkboxdesign*/
     /* Design des Schriftzuges */
@@ -292,6 +284,15 @@
     .bestaetigungsBereich a {
       font-size: 90%;
       padding: 0;
+    }
+    
+    /* benötigte Klasse für JS-Funktion*/
+    .show {
+      display: block;
+    }
+    /* benötigte Klasse für JS-Funktion*/
+    .hide {
+      display: none;
     }
 
 
