@@ -40,7 +40,11 @@
         font-variant: small-caps;
     }
 
+    input[type=text]{
+      width: 500px;
+      height: 50px;
 
+    }
 
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
@@ -80,6 +84,8 @@
     }
 
     .button {
+        margin-top: 15px;
+        margin-bottom: 15px;
         height: auto;
       	background-color:  #64FE2E;
       	color: white;
