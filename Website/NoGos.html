@@ -8,83 +8,108 @@
 
 <body>
 
-    <!-- mittlerer Bereich (dynamisch)-->
-    <div class="middlebox">
+  <!-- mittlerer Bereich (dynamisch)-->
+  <div class="middlebox">
 
-        <div id="navbarbg">
+      <div id="navbarbg">
+      </div>
+
+      <div class="navbar">
+          <a id="Nogonav">No-Go's</a>
+          <a id="shufflenav">Shuffle</a>
+          <a id="profilenav">Profil</a>
+      </div>
+
+      <div id="logo">
+          <a id="home" href="index.html">
+          <img src="img/bg.png" alt="What2Eat">
+          </a>
+      </div>
+
+      <!-- Bereich der Buttons -->
+      <div id="mobil_index">
+
+        <!-- UNVERTRÄGLICHKEITEN -->
+        <!-- Button -->
+        <button id="allergien" class="dropdown" onclick="showAllergien()">
+          <a>Unverträglichkeiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="allergien-dropdown" class="dropdown-content">
+          <label class="container">
+            <a>Laktoseintoleranz</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Nussalergie</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Glutenunverträglichkeit</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Weitere..</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
         </div>
 
-        <div class="navbar">
-            <a id="Nogonav">No-Go's</a>
-            <a id="shufflenav">Shuffle</a>
-            <a id="profilenav">Profil</a>
+        <!-- ESSGEWOHNHEITEN -->
+        <!-- Button -->
+        <button id="essgewohnheiten"  class="dropdown" onclick="showEssgewohnheiten()">
+          <a>Essgewohnheiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="essgewohnheiten-dropdown" class="dropdown-content">
+          <label class="container">
+            <a>Vegetarisch</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Vegan</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Weitere..</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
         </div>
 
-        <div id="logo">
-            <a id="home" href="index.html">
-            <img src="img/bg.png" alt="What2Eat">
-            </a>
+        <!-- EINZELNE ZUTATEN -->
+        <!-- Button -->
+        <button id="einzelneZutaten"  class="dropdown" onclick="showZutaten()">
+          <a>Einzelne Zutaten abwählen</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="zutaten-dropdown" class="dropdown-content">
+          <input id="zutatenSuche" type="text" placeholder="Suche..">
+          <label class="container">
+            <a>Nudeln</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Äpfel</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Tomaten</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
         </div>
-
-        <!-- Bereich der Buttons -->
-        <div id="mobil_index">
-
-                <!-- UNVERTRÄGLICHKEITEN -->
-                  <!-- Button -->
-                  <button id="allergien" class="dropdown" onclick="showAllergien()">
-                    <a>Unverträglichkeiten</a>
-                  </button>
-
-                  <!-- Inhalt des Dropdowns -->
-                  <div id="allergien-dropdown" class="dropdown-content">
-                    <label class="container">
-                      <a>Laktoseintoleranz</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">
-                      <a>Nussalergie</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">
-                      <a>Glutenunverträglichkeit</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">
-                      <a>Weitere..</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-
-                <!-- ESSGEWOHNHEITEN -->
-                  <!-- Button -->
-                  <button id="essgewohnheiten"  class="dropdown" onclick="showEssgewohnheiten()">
-                    <a>Essgewohnheiten</a>
-                  </button>
-
-                  <!-- Inhalt des Dropdowns -->
-                  <div id="essgewohnheiten-dropdown" class="dropdown-content">
-                    <label class="container">
-                      <a>Vegetarisch</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">
-                      <a>Vegan</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                    <label class="container">
-                      <a>Weitere..</a>
-                      <input type="checkbox">
-                      <span class="checkmark"></span>
-                    </label>
-                  </div>
-
-        </div>
+      </div>
 
         <div id="desktop_index" class="textbox">
 
