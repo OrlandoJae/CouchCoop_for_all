@@ -10,9 +10,10 @@
 
 /*body*/
     body {
-        background-repeat: no-repeat;
-        text-align: center;
-        min-height: 600px;/*jenachdem wie viel Inhalt in der Box ist größer !!*/
+      background-image: url("../img/bg.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
     }
 
     /*allgemeine Links*/
@@ -227,6 +228,38 @@
       border-radius: 2px;
     }
 
+    /*Bestätigunsbereich der No-Go-Seite*/
+    /*Design der Buttons*/
+    .bestaetigungsBereich button {
+      margin-top: 10vh;
+      display: inline-block;
+      margin-top: 10vh;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      padding: 0;
+      width: 30vw;
+      height: 8vh;
+      top: 40px;
+      border: none;
+    	background-color: #3ADF00;
+    	color: #f2f2f2;
+    	transition: all 400ms ease;
+      cursor: pointer;
+    }
+
+    .bestaetigungsBereich button:hover {
+        color: #3ADF00;
+      	background-color: white;
+        text-shadow: 0px 1px 1px #9FF781;
+      	box-shadow: inset 0 0 0 3px #3ADF00;
+    }
+
+    .bestaetigungsBereich a {
+      font-size: 100%;
+    }
+
+
+
 /*sollte das Fenster zu klein sein werden einige sachen entfernt (zur besseren darstellung)*/
 @media (max-width: 700px) and (max-height: 130px){
        #logo > a > img{display: none;}
@@ -236,6 +269,7 @@
     body {
         position: fixed;
         overflow:hidden;
+        background-image: none;
     }
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
