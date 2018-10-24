@@ -213,6 +213,20 @@
      transform: rotate(45deg);
     }
 
+    /*Design des Suchfeldes*/
+    .search {
+      postition: absolute;
+      margin-bottom: 2vh;
+      width: 80%;
+      border-top: 2px;
+      border-left: 2px;
+      border-right: 2px;
+      border-bottom: 4px;
+      border-color: #3ADF00;
+      border-style: solid;
+      border-radius: 2px;
+    }
+
 /*sollte das Fenster zu klein sein werden einige sachen entfernt (zur besseren darstellung)*/
 @media (max-width: 700px) and (max-height: 130px){
        #logo > a > img{display: none;}
