@@ -21,5 +21,17 @@ function showZutaten() {
   /*document.getElementById('essgewohnheiten').classList.toggle("hide");*/
 };
 function suchFunktion() {
-
+  var input, index, zutaten, dropdownInhalt, i;
+  input = document.getElementById('zutatenSuche');
+  index = input.value.toUpperCase();
+  dropdownInhalt = document.getElementById('zutaten-dropdown');
+  zutaten = document.getElementsByTagName('label');
+  for (i = 0; i < zutaten.length; i++) {
+    if (zutaten[i].innerHTML.toUpperCase().indexOf(index) > -1) {
+      zutaten[i].style.display = "";
+    }
+    else {
+      zutaten[i].style.display = "none";
+    }
+  }
 }

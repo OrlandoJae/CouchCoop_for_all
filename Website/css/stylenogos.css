@@ -95,6 +95,7 @@
 
 
     /*Dropdown-Menü*/
+    /*Button, der Dropdown aktiviert*/
     .dropdown {
       border: none;
       height: auto;
@@ -108,14 +109,14 @@
       margin-left: 10px;
       cursor: pointer;
     }
-
+    /*Design, wenn Maus über Button hovert*/
     .dropdown:hover {
         color: #3ADF00;
       	background-color: white;
         text-shadow: 0px 1px 1px #9FF781;
       	box-shadow: inset 0 0 0 3px #3ADF00;
     }
-
+    /*Design des Dropdown-Inhalts*/
     .dropdown-content {
     display: none;
     position: relative;
@@ -131,11 +132,11 @@
     .dropdown-content a {
       font-size: 4.5vw;
     }
-
+    /* benötigte Klasse für JS-Funktion*/
     .show {
       display: block;
     }
-
+    /* benötigte Klasse für JS-Funktion*/
     .hide {
       display: none;
     }
