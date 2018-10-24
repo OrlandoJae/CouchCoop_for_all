@@ -10,6 +10,8 @@
 
 /*body*/
     body {
+        background-image: url("../img/bg.jpg");
+        background-size: cover;
         background-repeat: no-repeat;
         text-align: center;
         min-height: 600px;/*jenachdem wie viel Inhalt in der Box ist größer !!*/
@@ -53,6 +55,8 @@
         border-color: #64FE2E;
         border-width: 2px;
         border-style: solid;
+        background-color: white;
+        opacity: 0.9;
     }
 
 /*Navigationsbar*/
@@ -60,6 +64,8 @@
         display: flex;
         justify-content: flex-end;
         position: fixed;
+        background-color: white;
+        opacity: 0.9;
     }
 
     .navbar > a {
@@ -121,6 +127,7 @@
 /*Handys-----------------------------------------------------------------------------------------------------*/
 @media (max-width: 700px){
     body {
+        background-image: none;
         position: fixed;
         overflow:hidden;
     }
