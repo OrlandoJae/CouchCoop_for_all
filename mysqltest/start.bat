@@ -1,1 +1,1 @@
-start cmd /K node test.js
+start cmd /K 
