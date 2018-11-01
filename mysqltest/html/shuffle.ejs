@@ -17,13 +17,25 @@
             <img src="bg.png" alt="What2Eat">
             </a>
         </div>
-          <% var x = Math.floor(Math.random() * shufflegericht.length); %>
-        <div id="mobil_index" class="textbox">
-          <%= shufflegericht[x] %>
-        </div>
+          <%
+            var zutat = new Array(idzutat.length);
+            var x = Math.floor(Math.random() * gerichttitel.length);
+            var l = 0;
+            for (var i = 0; i < idgericht.length; i++) {
+              if (idgericht[i] == x) {
+                zutat[l] = bezeichnung[idzutat[i]];
+                l = l+1;
+              }
+            }
+          %>
 
-        <div id="desktop_index" class="textbox">
-          <%= shufflegericht[x] %>
+        <div class="textbox">
+          <h1><%= gerichttitel[x] %></h1>
+          <p>
+            <% for (var i = 0; i < l; i++) {%>
+            <%= zutat[i] %><br>
+            <% } %>
+          </p>
         </div>
 
     </div>
