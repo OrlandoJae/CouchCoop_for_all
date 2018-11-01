@@ -2,10 +2,10 @@ var express = require("express");
 const router = express.Router();
 var mysql = require('mysql');
 var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "what2eat"
+  host: "sql7.freemysqlhosting.net",
+  user: "sql7263848",
+  password: 'jPJhq34Qr5',
+  database: "sql7263848",
 });
 
 var gerichttitel;

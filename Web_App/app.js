@@ -11,6 +11,7 @@ app.set('views', path.join(__dirname, 'html'));
 // Set the folder for css & java scripts & img
 app.use(express.static(path.join(__dirname,'css')));
 app.use(express.static(path.join(__dirname,'img')));
+app.use(express.static(path.join(__dirname, 'js')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 // Set the view engine to ejs

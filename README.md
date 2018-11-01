@@ -6,3 +6,9 @@ Es zahlreiche Online-Kochbücher, z.B. Chefkoch.de, und viele Quellen der Inspir
 Daher möchten wir eine Anwendung erstellen, bei der Nutzer zunächst einmalig ihre Essgewohnheiten ein-tragen, und anschließend jederzeit direkt ein Gericht vorgeschlagen bekommen. Der Vorteil hier ist, dass man nicht vor einer schier endlosen Anzahl von möglichen Gerichten steht, sondern direkt ein den eigenen Vorlieben angepasstes Gericht vorgeschlagen bekommt.
 
 Als Parameter für die anschließend zufällige Auswahl des Gerichtes soll es neben Optionen wie „vegeta-risch“, „vegan“, „glutenfrei“ oder ähnliches auch Einstellungsmöglichkeiten bezüglich des Anspruchs der Zu-bereitung, der benötigten Zeit, und im besten Fall des Preises geben. Da letzteres zunächst schwierig zu ermitteln ist, wird es diese Option nicht in der Ersten Version der Anwendung geben.
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Um den Server zu starten die Datei start.bat klicken.
+Um die Web_App zu öffnen können Sie den Internetlink ("localhsot") nehmen oder eifach "localhost:3000" in den Browser geben.
