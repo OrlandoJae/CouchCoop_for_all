@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+   <% include teilstruktur/head %>
+<body>
+
+    <!-- mittlerer Bereich (dynamisch)-->
+    <div class="middlebox">
+
+        <div class="navbar">
+            <a id="nogosnav" href="nogos">NoGo's</a>
+            <a id="loginnav" href="login">Login</a>
+            <a id="ragistrationnav" href="regis">Registration</a>
+        </div>
+
+        <div id="logo">
+            <a id="home" href="/">
+            <img src="bg.png" alt="What2Eat">
+            </a>
+        </div>
+          <% var x = Math.floor(Math.random() * shufflegericht.length); %>
+        <div id="mobil_index" class="textbox">
+          <%= shufflegericht[x] %>
+        </div>
+
+        <div id="desktop_index" class="textbox">
+          <%= shufflegericht[x] %>
+        </div>
+
+    </div>
+
+</body>
+</html>
