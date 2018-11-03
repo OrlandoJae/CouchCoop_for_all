@@ -10,5 +10,6 @@ Als Parameter für die anschließend zufällige Auswahl des Gerichtes soll es ne
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Bevor Sie die Web_App starten können müssen sie Node.js installieren.
 Um den Server zu starten die Datei start.bat klicken.
 Um die Web_App zu öffnen können Sie den Internetlink ("localhsot") nehmen oder eifach "localhost:3000" in den Browser geben.
