@@ -88,7 +88,7 @@
         <!-- Inhalt des Dropdowns -->
         <div id="zutaten-dropdown" class="dropdown-content">
           <input class="search" id="zutatenSuche" type="text" placeholder="Suche.." onkeyup="suchFunktion()">
-          <% for (var i = 0; i < idzutat.length-1; i++) { %>
+          <% for (var i = 0; i < idzutat.length; i++) { %>
           <label class="container">
             <a><%= bezeichnung[i]; %></a>
             <input type="checkbox">
