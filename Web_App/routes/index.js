@@ -56,9 +56,9 @@ var idessensgewohnheiten;
        idessensgewohnheiten = new Array(result.length);
        gewohnheitsbezeichnung = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
-          gewohnheitsbezeichnung[i] = result[i].idgericht;
-          idessensgewohnheiten[i] = result[i].idzutat;
-          console.log("Essensgewohnheiten:" + idessensgewohnheiten );
+          gewohnheitsbezeichnung[i] = result[i].gewohnheitsbezeichnung;
+          idessensgewohnheiten[i] = result[i].idessensgewohnheiten;
+          console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );
         };
     });
 
