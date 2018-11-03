@@ -382,6 +382,9 @@
     }
 
     .helpContainer {
+      vertical-align: top;
+      margin-left: 5px;
+      margin-right: 5px;
       display: inline-block;
       border-color: #64FE2E;
       border-width: 2px;
@@ -389,7 +392,8 @@
     }
 
     .dropdown {
-      justify-content: ;
+      vertical-align: top;
+      flex-grow: 0;
       width: 100%;
       text-align: center;
       border: none;
@@ -402,7 +406,6 @@
       margin-left: 0;
       margin-top: 0;
       margin-right: 0;
-
       cursor: pointer;
     }
 
@@ -464,7 +467,7 @@
      bottom: 5%;
      left: 2px;
      height: 90%;
-     width: 7%;
+     width: 5%;
      background-color: #eee;
     }
 
@@ -493,7 +496,7 @@
     /* Design des Häkchens */
     .container .checkmark:after {
      left: 35%;
-     top: 15%;
+     top: 10%;
      width: 20%;
      height: 50%;
      border: solid white;
@@ -501,6 +504,23 @@
      -webkit-transform: rotate(45deg);
      -ms-transform: rotate(45deg);
      transform: rotate(45deg);
+    }
+
+    /*Design des Suchfeldes*/
+    .search {
+      display: inline;
+      border-top: 2px;
+      border-left: 2px;
+      border-right: 2px;
+      border-bottom: 4px;
+      border-color: #3ADF00;
+      border-style: solid;
+      border-radius: 2px;
+    }
+
+    .textbox input[type=text]{
+      width: 100%;
+      height: 30px;
     }
 
     /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
@@ -540,6 +560,9 @@
         align-items: center;
         justify-content: center;
         margin-top: 0px;
+        border-color: #64FE2E;
+        border-width: 2px;
+        border-style: solid;
     }
 
     #desktop_index > .text{
