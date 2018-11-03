@@ -119,7 +119,104 @@
 
       </div>
 
-      <div id="desktop_index" class="textbox">
+      <div id="desktop_index1" class="textbox">
+        <!-- Bereich der NO-GO-Buttons -->
+        <!-- UNVERTRÄGLICHKEITEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="allergienD" class="dropdown" onclick="showAllergien()">
+          <a>Unverträglichkeiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="allergien-dropdownD" class="dropdown-content">
+          <label class="container">
+            <a>Laktoseintoleranz</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Nussalergie</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Glutenunverträglichkeit</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Weitere..</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+        <!-- ESSGEWOHNHEITEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="essgewohnheitenD"  class="dropdown" onclick="showEssgewohnheiten()">
+          <a>Essgewohnheiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="essgewohnheiten-dropdownD" class="dropdown-content">
+          <label class="container">
+            <a>Vegetarisch</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Vegan</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Weitere..</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+        <!-- EINZELNE ZUTATEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="einzelneZutatenD"  class="dropdown" onclick="showZutaten()">
+          <a>Einzelne Zutaten abwählen</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="zutaten-dropdownD" class="dropdown-content">
+          <input class="search" id="zutatenSucheD" type="text" placeholder="Suche.." onkeyup="suchFunktionD()">
+          <label href="#nudeln" class="container">
+            <a>Nudeln</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label href="#aepfel" class="container">
+            <a>Äpfel</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label href="#tomaten" class="container">
+            <a>Tomaten</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+        <!-- Bereich der Buttons zum Speichern oder Abbrechen -->
+        <div class="bestaetigungsBereich">
+          <!-- Abbrechen-Button -->
+          <button id="abbrechenD">
+            <a>Abbrechen</a>
+          </button>
+          <!-- Bestätigen-Button -->
+          <button id="bestaetigeD">
+            <a>Bestätigen</a>
+          </button>
+        </div>
+
       </div>
 
     </div>

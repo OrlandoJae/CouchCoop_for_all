@@ -311,6 +311,7 @@
         background-image: none;
         overflow: hidden;
     }
+
 /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
     .middlebox {
         position: absolute;
@@ -378,6 +379,128 @@
     input[type=text]{
       width: 500px;
       height: 50px;
+    }
+
+    .helpContainer {
+      display: inline-block;
+      border-color: #64FE2E;
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    .dropdown {
+      justify-content: ;
+      width: 100%;
+      text-align: center;
+      border: none;
+      height: auto;
+      background-color: #3ADF00;
+      color: #f2f2f2;
+      font-size: 150%;
+      transition: all 400ms ease;
+      padding: 20px;
+      margin-left: 0;
+      margin-top: 0;
+      margin-right: 0;
+
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      align-items: baseline;
+      position: relative;
+      background-color: #f9f9f9;
+      min-width: 0;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 0;
+      z-index: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .dropdown a {
+      font-size: 80%;
+    }
+
+    .dropdown-content a {
+      font-size: 20%;
+    }
+
+    /*Checkboxdesign*/
+    /* Design des Schriftzuges */
+    .container {
+     display: run-in;
+     position: relative;
+     padding-left: 0;
+     margin-bottom: 0;
+     cursor: pointer;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     border-style: double;
+     border-color: #3ADF00;
+     border-radius: 3px;
+    }
+
+    .container a {
+      font-size: 80%;
+      font-weight: 600;
+    }
+
+    /* Standartcheckbox des Browsers verstecken */
+    .container input {
+     position: absolute;
+     opacity: 0;
+     cursor: pointer;
+     height: 0;
+     width: 0;
+    }
+
+    /* Checkboxdesign */
+    .checkmark {
+     position: absolute;
+     top: 5%;
+     bottom: 5%;
+     left: 2px;
+     height: 90%;
+     width: 7%;
+     background-color: #eee;
+    }
+
+    /* Ändern der Farbe der Checkbox bei Mousehovern */
+    .container:hover input ~ .checkmark {
+     background-color: #ccc;
+    }
+
+    /* Design wenn Checkbox aktiviert */
+    .container input:checked ~ .checkmark {
+     background-color: #3ADF00;
+    }
+
+    /* Sorgt für Benutzbarkeit der Checkbox */
+    .checkmark:after {
+     content: "";
+     position: absolute;
+     display: none;
+    }
+
+    /* Zeigt Häkchen, wenn Checkbox aktiviert*/
+    .container input:checked ~ .checkmark:after {
+     display: block;
+    }
+
+    /* Design des Häkchens */
+    .container .checkmark:after {
+     left: 35%;
+     top: 15%;
+     width: 20%;
+     height: 50%;
+     border: solid white;
+     border-width: 0 3px 3px 0;
+     -webkit-transform: rotate(45deg);
+     -ms-transform: rotate(45deg);
+     transform: rotate(45deg);
     }
 
     /*mittlere Box damit alles (in der box) mittig und dynamisch ist*/
