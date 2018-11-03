@@ -386,18 +386,15 @@
       margin-left: 5px;
       margin-right: 5px;
       display: inline-block;
-      border-color: #64FE2E;
+      /*border-color: #64FE2E;
       border-width: 2px;
-      border-style: solid;
+      border-style: solid;*/
     }
 
     .dropdown {
-      vertical-align: top;
       flex-grow: 0;
       width: 100%;
-      text-align: center;
       border: none;
-      height: auto;
       background-color: #3ADF00;
       color: #f2f2f2;
       font-size: 150%;
@@ -516,6 +513,7 @@
       border-color: #3ADF00;
       border-style: solid;
       border-radius: 2px;
+      margin-bottom: 0;
     }
 
     .textbox input[type=text]{
@@ -557,12 +555,11 @@
     #desktop_index{
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
         margin-top: 0px;
-        border-color: #64FE2E;
+        /*border-color: #64FE2E;
         border-width: 2px;
-        border-style: solid;
+        border-style: solid;*/
     }
 
     #desktop_index > .text{
