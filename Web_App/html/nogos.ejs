@@ -62,13 +62,21 @@
 
         <!-- Inhalt des Dropdowns -->
         <div id="essgewohnheiten-dropdown" class="dropdown-content">
-          <% for (var i = 0; i < idzutat.length; i++) { %>
           <label class="container">
-            <a><% idzutat[i]; %></a>
+            <a>Vegetarisch</a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <% } %>
+          <label class="container">
+            <a>Vegan</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">
+            <a>Weitere</a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
         </div>
 
         <!-- EINZELNE ZUTATEN -->
@@ -80,21 +88,13 @@
         <!-- Inhalt des Dropdowns -->
         <div id="zutaten-dropdown" class="dropdown-content">
           <input class="search" id="zutatenSuche" type="text" placeholder="Suche.." onkeyup="suchFunktion()">
-          <label href="#nudeln" class="container">
-            <a>Nudeln</a>
+          <% for (var i = 0; i < idzutat.length-1; i++) { %>
+          <label class="container">
+            <a><%= bezeichnung[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label href="#aepfel" class="container">
-            <a>Äpfel</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label href="#tomaten" class="container">
-            <a>Tomaten</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
 
         <!-- Bereich der Buttons zum Speichern oder Abbrechen -->
@@ -180,21 +180,13 @@
         <!-- Inhalt des Dropdowns -->
         <div id="zutaten-dropdownD" class="dropdown-content">
           <input class="search" id="zutatenSucheD" type="text" placeholder="Suche.." onkeyup="suchFunktionD()">
-          <label href="#nudeln" class="container">
-            <a>Nudeln</a>
+          <% for (var i = 0; i < idzutat.length-1; i++) { %>
+          <label class="container">
+            <a><%= bezeichnung[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label href="#aepfel" class="container">
-            <a>Äpfel</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label href="#tomaten" class="container">
-            <a>Tomaten</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
       </div>
         <!-- Bereich der Buttons zum Speichern oder Abbrechen -->
