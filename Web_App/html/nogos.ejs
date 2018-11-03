@@ -62,21 +62,13 @@
 
         <!-- Inhalt des Dropdowns -->
         <div id="essgewohnheiten-dropdown" class="dropdown-content">
+          <% for (var i = 0; i < idzutat.length; i++) { %>
           <label class="container">
-            <a>Vegetarisch</a>
+            <a><% idzutat[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">
-            <a>Vegan</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Weitere..</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
 
         <!-- EINZELNE ZUTATEN -->

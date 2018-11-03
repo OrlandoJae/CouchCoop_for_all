@@ -1,7 +1,6 @@
 var express = require("express");
 var path = require("path");
 var routes = require('./routes');
-var mysql = require("./mysql")
 var app = express();
 
 
@@ -18,7 +17,6 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.set('view engine', 'ejs');
 
 app.use('/', routes);
-app.use('/', mysql);
 
 app.listen(3000, () => {
     console.log("Server is running at localhost:3000");
