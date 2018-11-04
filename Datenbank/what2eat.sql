@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 04. Nov 2018 um 20:02
+-- Erstellungszeit: 04. Nov 2018 um 20:08
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -111,14 +111,14 @@ INSERT INTO `rezept` (`idgericht`, `idzutat`, `menge`, `mengenangabe`) VALUES
 
 CREATE TABLE `unvertraeglichkeiten` (
   `idunvertraeglichkeiten` int(11) NOT NULL,
-  `bezeichnung` varchar(50) NOT NULL
+  `unvertraeglichkeitenbezeichnung` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `unvertraeglichkeiten`
 --
 
-INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `bezeichnung`) VALUES
+INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkeitenbezeichnung`) VALUES
 (1, 'Laktoseintolerant'),
 (2, 'Glutenunverträglich');
 

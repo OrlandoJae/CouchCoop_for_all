@@ -16,6 +16,8 @@ var menge;
 var mengenangabe;
 var gewohnheitsbezeichnung;
 var idessensgewohnheiten;
+var idunvertraeglichkeiten;
+var unvertraeglichkeitenbezeichnung;
 
   con.connect(function(err) {
     if (err) throw err;
@@ -62,6 +64,17 @@ var idessensgewohnheiten;
         };
     });
 
+    con.query("SELECT * FROM unvertraeglichkeiten", function (err, result, fields) {
+      if (err) throw err;
+       idunvertraeglichkeiten = new Array(result.length);
+       unvertraeglichkeitenbezeichnung = new Array(result.length);
+        for (var i = 0; i < result.length; i++) {
+          unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
+          idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
+          console.log("Unvertraeglichkeiten:" + idunvertraeglichkeiten[i] );
+        };
+    });
+
   });
 
   router.get('/regis', (req, res) => {
@@ -89,7 +102,7 @@ var idessensgewohnheiten;
 
   router.get('/nogos', (req, res) => {
       console.log('Request for nogos page recieved');
-      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung});
+      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung});
   })
 
 

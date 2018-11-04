@@ -32,26 +32,13 @@
 
         <!-- Inhalt des Dropdowns -->
         <div id="allergien-dropdown" class="dropdown-content">
+          <% for (var i = 0; i < idzutat.length; i++) { %>
           <label class="container">
-            <a>Laktoseintoleranz</a>
+            <a><%= unvertraeglichkeitenbezeichnung[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">
-            <a>Nussalergie</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Glutenunverträglichkeit</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Weitere..</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
 
         <!-- ESSGEWOHNHEITEN -->
@@ -62,21 +49,13 @@
 
         <!-- Inhalt des Dropdowns -->
         <div id="essgewohnheiten-dropdown" class="dropdown-content">
+          <% for (var i = 0; i < idessensgewohnheiten.length; i++) { %>
           <label class="container">
-            <a>Vegetarisch</a>
+            <a><%= gewohnheitsbezeichnung[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">
-            <a>Vegan</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Weitere</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
 
         <!-- EINZELNE ZUTATEN -->
@@ -122,26 +101,13 @@
 
         <!-- Inhalt des Dropdowns -->
         <div id="allergien-dropdownD" class="dropdown-content">
+          <% for (var i = 0; i < idzutat.length; i++) { %>
           <label class="container">
-            <a>Laktoseintoleranz</a>
+            <a><%= unvertraeglichkeitenbezeichnung[i]; %></a>
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container">
-            <a>Nussalergie</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Glutenunverträglichkeit</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">
-            <a>Weitere..</a>
-            <input type="checkbox">
-            <span class="checkmark"></span>
-          </label>
+          <% } %>
         </div>
       </div>
         <!-- ESSGEWOHNHEITEN -->
