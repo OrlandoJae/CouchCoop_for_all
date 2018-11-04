@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Nov 2018 um 23:11
+-- Erstellungszeit: 04. Nov 2018 um 20:02
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -106,6 +106,25 @@ INSERT INTO `rezept` (`idgericht`, `idzutat`, `menge`, `mengenangabe`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `unvertraeglichkeiten`
+--
+
+CREATE TABLE `unvertraeglichkeiten` (
+  `idunvertraeglichkeiten` int(11) NOT NULL,
+  `bezeichnung` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `unvertraeglichkeiten`
+--
+
+INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `bezeichnung`) VALUES
+(1, 'Laktoseintolerant'),
+(2, 'Glutenunverträglich');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `zutat`
 --
 
@@ -164,6 +183,12 @@ ALTER TABLE `rezept`
   ADD KEY `idzutat` (`idzutat`);
 
 --
+-- Indizes für die Tabelle `unvertraeglichkeiten`
+--
+ALTER TABLE `unvertraeglichkeiten`
+  ADD PRIMARY KEY (`idunvertraeglichkeiten`);
+
+--
 -- Indizes für die Tabelle `zutat`
 --
 ALTER TABLE `zutat`
@@ -184,6 +209,12 @@ ALTER TABLE `essensgewohnheiten`
 --
 ALTER TABLE `gericht`
   MODIFY `idgericht` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `unvertraeglichkeiten`
+--
+ALTER TABLE `unvertraeglichkeiten`
+  MODIFY `idunvertraeglichkeiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `zutat`
