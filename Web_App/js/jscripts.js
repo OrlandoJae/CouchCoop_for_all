@@ -71,15 +71,15 @@ function saveNogos(a, b, c) {
     if (checkboxen[i].getAttribute('type')=='checkbox'){
       if (checkboxen[i].checked == true) {
         if (checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdownD')){
-          gewohnheitennogos[j] = checkboxen[i].innerHTML.toUpperCase();
+          gewohnheitennogos[j] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
           j++;
         }
         if (checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdownD')){
-          zutatennogos[k] = checkboxen[i].innerHTML.toUpperCase();
+          zutatennogos[k] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
           k++;
         }
         if (checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdownD')){
-          unvertraeglichkeitennogos[l] = checkboxen[i].innerHTML.toUpperCase();
+          unvertraeglichkeitennogos[l] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
           l++;
         }
       }
