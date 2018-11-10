@@ -91,7 +91,7 @@ var idunvertraeglichkeiten;
         for (var i = 0; i < result.length; i++) {
           idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
           unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
-          console.log("Essensgewohnheiten:" + idunvertraeglichkeiten[i] );
+          console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
         };
     });
 
@@ -122,5 +122,5 @@ var idunvertraeglichkeiten;
 
   app.get('/nogos', (req, res) => {
       console.log('Request for nogos page recieved');
-      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung});
+      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung});
   })
