@@ -74,6 +74,7 @@ var unvertraeglichkeitennogos;
           mengenangabe[i] = result[i].mengenangabe;
           console.log("Rezept:" + idgericht[i] + "," + idzutat[i] + "," + menge[i] + "," + mengenangabe[i]);
         };
+        zutatennogos = new Array(idzutat.length-1);
     });
 
     con.query("SELECT * FROM essensgewohnheiten", function (err, result, fields) {
@@ -85,6 +86,7 @@ var unvertraeglichkeitennogos;
           idessensgewohnheiten[i] = result[i].idessensgewohnheiten;
           console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );
         };
+        gewohnheitennogos = new Array (idessensgewohnheiten.length);
     });
 
     con.query("SELECT * FROM unvertraeglichkeiten", function (err, result, fields) {
@@ -96,9 +98,11 @@ var unvertraeglichkeitennogos;
           unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
           console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
         };
+        unvertraeglichkeitennogos = new Array (idunvertraeglichkeiten);
     });
 
   });
+
 
   app.get('/regis', (req, res) => {
       console.log('Request for regis page recieved');
@@ -119,7 +123,7 @@ var unvertraeglichkeitennogos;
 
   app.get('/', (req, res) => {
       console.log('Request for home recieved');
-      res.render('index');
+      res.render('index', {zutatennogos, gewohnheitennogos, unvertraeglichkeitennogos});
   })
 
 
