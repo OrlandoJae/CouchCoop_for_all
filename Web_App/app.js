@@ -84,30 +84,30 @@ var idessensgewohnheiten;
 
   });
 
-  router.get('/regis', (req, res) => {
+  app.get('/regis', (req, res) => {
       console.log('Request for regis page recieved');
       res.render('regis', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe,gewohnheitsbezeichnung});
   })
 
 
-  router.get('/shuffle', (req, res) => {
+  app.get('/shuffle', (req, res) => {
         console.log('Request for nogos page recieved');
         res.render('shuffle', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe,gewohnheitsbezeichnung});
     })
 
-  router.get('/login', (req, res) => {
+  app.get('/login', (req, res) => {
         console.log('Request for nogos page recieved');
         res.render('login', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe,gewohnheitsbezeichnung});
   })
 
 
-  router.get('/', (req, res) => {
+  app.get('/', (req, res) => {
       console.log('Request for home recieved');
       res.render('index');
   })
 
 
-  router.get('/nogos', (req, res) => {
+  app.get('/nogos', (req, res) => {
       console.log('Request for nogos page recieved');
       res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung});
   })
