@@ -62,7 +62,6 @@ function suchFunktionD() {
 }
 
 function saveNogos(a, b, c) {
-  console.log("Hallo Welt!");
   var zutatennogos = a;
   var unvertraeglichkeitennogos = b;
   var gewohnheitennogos = c;
@@ -70,18 +69,21 @@ function saveNogos(a, b, c) {
   var j = k = l = 0;
   for (var i=0; i < checkboxen.length; i++) {
     if (checkboxen[i].getAttribute('type')=='checkbox'){
-      if (checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdownD')){
-        /*gewohnheitennogos[j] = checkboxen[i].innerHTML.toUpperCase();
-        j++*/
-      }
-      if (checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdownD')){
-        zutatennogos[k] = checkboxen[i].innerHTML.toUpperCase();
-        k++;
-      }
-      if (checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdownD')){
-        /*unvertraeglichkeitennogos[l] = checkboxen[i].innerHTML.toUpperCase();
-        l++;*/
+      if (checkboxen[i].checked == true) {
+        if (checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdownD')){
+          gewohnheitennogos[j] = checkboxen[i].innerHTML.toUpperCase();
+          j++;
+        }
+        if (checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdownD')){
+          zutatennogos[k] = checkboxen[i].innerHTML.toUpperCase();
+          k++;
+        }
+        if (checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdownD')){
+          unvertraeglichkeitennogos[l] = checkboxen[i].innerHTML.toUpperCase();
+          l++;
+        }
       }
     }
   }
+  console.log(zutatennogos);
 }

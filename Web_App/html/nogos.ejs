@@ -153,10 +153,16 @@
           <a href ="/">
             <button id="abbrechenD"><p>Abbrechen</p></button>
           </a>
-          <!-- Bestätigen-Button -->
-            <a href="/" onclick="saveNogos(<%zutatennogos%>)">
+          <!-- Bestätigen-Button  -->
+          <script>
+          var a = new Array(<%=idzutat.length-1%>);
+          var b = new Array(<%=idunvertraeglichkeiten.length%>);
+          var c = new Array(<%=idessensgewohnheiten.length%>);
+          </script>
+
+          <a href="/" onclick="saveNogos(a, b, c)">
             <button id="bestaetigeD"><p>Bestätigen</p></button>
-            </a>
+          </a>
         </div>
 
       </div>
