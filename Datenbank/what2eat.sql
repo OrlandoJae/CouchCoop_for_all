@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 04. Nov 2018 um 20:08
+-- Erstellungszeit: 10. Nov 2018 um 15:03
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -40,7 +40,8 @@ CREATE TABLE `essensgewohnheiten` (
 INSERT INTO `essensgewohnheiten` (`idessensgewohnheiten`, `gewohnheitsbezeichnung`) VALUES
 (0, 'vegan'),
 (1, 'low-carb'),
-(2, 'vegetarisch');
+(2, 'vegetarisch'),
+(3, 'Alles');
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,8 @@ CREATE TABLE `unvertraeglichkeiten` (
 
 INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkeitenbezeichnung`) VALUES
 (0, 'Laktoseintolerant'),
-(1, 'Glutenunverträglich');
+(1, 'Glutenunverträglich'),
+(2, 'Alles');
 
 -- --------------------------------------------------------
 
@@ -202,7 +204,7 @@ ALTER TABLE `zutat`
 -- AUTO_INCREMENT für Tabelle `essensgewohnheiten`
 --
 ALTER TABLE `essensgewohnheiten`
-  MODIFY `idessensgewohnheiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idessensgewohnheiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
@@ -214,7 +216,7 @@ ALTER TABLE `gericht`
 -- AUTO_INCREMENT für Tabelle `unvertraeglichkeiten`
 --
 ALTER TABLE `unvertraeglichkeiten`
-  MODIFY `idunvertraeglichkeiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idunvertraeglichkeiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT für Tabelle `zutat`
