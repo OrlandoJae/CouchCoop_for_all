@@ -60,13 +60,17 @@ function suchFunktionD() {
     }
   }
 }
+/*Arrays, die als Parameter für Shuffle dienen*/
+var zutatennogos;
+var unvertraeglichkeitennogos;
+var gewohnheitennogos;
 
 function saveNogos(a, b, c) {
-  var zutatennogos = a;
-  var unvertraeglichkeitennogos = b;
-  var gewohnheitennogos = c;
+  zutatennogos = a;
+  unvertraeglichkeitennogos = b;
+  gewohnheitennogos = c;
   var checkboxen = document.getElementsByTagName('input');
-  var j = k = l = 0;
+  var j = k = l = 0; /*Index für die einzelnen Arrays*/
   for (var i=0; i < checkboxen.length; i++) {
     if (checkboxen[i].getAttribute('type')=='checkbox'){
       if (checkboxen[i].checked == true) {
@@ -85,5 +89,4 @@ function saveNogos(a, b, c) {
       }
     }
   }
-  console.log(zutatennogos);
 }
