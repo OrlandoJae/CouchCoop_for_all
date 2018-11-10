@@ -38,6 +38,9 @@ var gewohnheitsbezeichnung;
 var idessensgewohnheiten;
 var unvertraeglichkeitenbezeichnung;
 var idunvertraeglichkeiten;
+var zutatennogos;
+var gewohnheitennogos;
+var unvertraeglichkeitennogos;
 
   con.connect(function(err) {
     if (err) throw err;
@@ -122,5 +125,5 @@ var idunvertraeglichkeiten;
 
   app.get('/nogos', (req, res) => {
       console.log('Request for nogos page recieved');
-      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung});
+      res.render('nogos', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung, zutatennogos, gewohnheitennogos, unvertraeglichkeitennogos});
   })

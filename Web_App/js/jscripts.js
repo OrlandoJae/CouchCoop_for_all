@@ -36,10 +36,10 @@ function suchFunktion() {
   /*dropdownInhalt = document.getElementById('zutaten-dropdown');*/
   zutaten = document.getElementsByTagName('label');
   for (i = 0; i < zutaten.length; i++) {
-    if (zutaten[i].innerHTML.toUpperCase().indexOf(index) > -1) {
+    if (zutaten[i].innerHTML.toUpperCase().indexOf(index) > -1 && zutaten[i].parentNode == document.getElementById('zutaten-dropdown')) {
       zutaten[i].style.display = "";
     }
-    else {
+    else if (zutaten[i].parentNode == document.getElementById('zutaten-dropdown')){
       zutaten[i].style.display = "none";
     }
   }
@@ -52,11 +52,35 @@ function suchFunktionD() {
   /*dropdownInhalt = document.getElementById('zutaten-dropdown');*/
   zutaten = document.getElementsByTagName('label');
   for (i = 0; i < zutaten.length; i++) {
-    if (zutaten[i].innerHTML.toUpperCase().indexOf(index) > -1) {
+    if (zutaten[i].innerHTML.toUpperCase().indexOf(index) > -1 && zutaten[i].parentNode == document.getElementById('zutaten-dropdownD')) {
       zutaten[i].style.display = "";
     }
-    else {
+    else if (zutaten[i].parentNode == document.getElementById('zutaten-dropdownD')) {
       zutaten[i].style.display = "none";
+    }
+  }
+}
+
+function saveNogos() {
+  zutatennogos = new Array(idzutat.length-1);
+  gewohnheitennogos = new Array (idessensgewohnheiten.length);
+  unvertraeglichkeitennogos = new Array (idunvertraeglichkeiten);
+  var checkboxen = document.getElementsbyTagName('input');
+  var j = k = l = 0;
+  for (var i=0; i < checkboxen.length; i++) {
+    if (checkboxen[i].getAttribute('type')=='checkbox'){
+      if (checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdownD')){
+        gewohnheitennogos[j] = checkboxen[i].innerHTML.toUpperCase();
+        j++;
+      }
+      if (checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdownD')){
+        zutatennogos[k] = checkboxen[i].innerHTML.toUpperCase();
+        k++;
+      }
+      if (checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdownD')){
+        unvertraeglichkeitennogos[l] = checkboxen[i].innerHTML.toUpperCase();
+        l++;
+      }
     }
   }
 }
