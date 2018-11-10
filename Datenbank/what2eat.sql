@@ -119,8 +119,8 @@ CREATE TABLE `unvertraeglichkeiten` (
 --
 
 INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkeitenbezeichnung`) VALUES
-(1, 'Laktoseintolerant'),
-(2, 'Glutenunverträglich');
+(0, 'Laktoseintolerant'),
+(1, 'Glutenunverträglich');
 
 -- --------------------------------------------------------
 

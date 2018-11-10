@@ -36,6 +36,8 @@ var menge;
 var mengenangabe;
 var gewohnheitsbezeichnung;
 var idessensgewohnheiten;
+var unvertraeglichkeitenbezeichnung;
+var idunvertraeglichkeiten;
 
   con.connect(function(err) {
     if (err) throw err;
@@ -79,6 +81,17 @@ var idessensgewohnheiten;
           gewohnheitsbezeichnung[i] = result[i].gewohnheitsbezeichnung;
           idessensgewohnheiten[i] = result[i].idessensgewohnheiten;
           console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );
+        };
+    });
+
+    con.query("SELECT * FROM unvertraeglichkeiten", function (err, result, fields) {
+      if (err) throw err;
+       idunvertraeglichkeiten = new Array(result.length);
+       unvertraeglichkeitenbezeichnung = new Array(result.length);
+        for (var i = 0; i < result.length; i++) {
+          idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
+          unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
+          console.log("Essensgewohnheiten:" + idunvertraeglichkeiten[i] );
         };
     });
 
