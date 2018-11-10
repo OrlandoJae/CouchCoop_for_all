@@ -42,6 +42,12 @@ var zutatennogos;
 var gewohnheitennogos;
 var unvertraeglichkeitennogos;
 
+class gericht {
+  var zutaten;
+  var unvertraeglichkeiten;
+  var essgewohnheiten;
+}
+
   con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM gericht", function (err, result, fields) {
@@ -52,6 +58,7 @@ var unvertraeglichkeitennogos;
           console.log("Gericht" + i + ": " + gerichttitel[i]);
         };
     });
+
     con.query("SELECT * FROM zutat", function (err, result, fields) {
       if (err) throw err;
        bezeichnung = new Array(result.length);
@@ -60,6 +67,7 @@ var unvertraeglichkeitennogos;
           console.log("Zutatbezeichnng" + i +": " + bezeichnung[i])
         };
     });
+
     con.query("SELECT * FROM rezept", function (err, result, fields) {
       if (err) throw err;
        idgericht = new Array(result.length);
@@ -101,6 +109,18 @@ var unvertraeglichkeitennogos;
         unvertraeglichkeitennogos = new Array (idunvertraeglichkeiten);
     });
 
+    con.query("SELECT * FROM nogos", function (err, result, fields) {
+      if (err) throw err;
+       gerichte = new Array(result.length);
+       essensgewohnheiten = new Array(result.length);
+       unvertraeglichkeiten = new Array(result.length);
+        for (var i = 0; i < result.length; i++) {
+          gerichte[i] = result[i].idgericht;
+          unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
+          console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
+        };
+    });
+
   });
 
 
@@ -112,7 +132,7 @@ var unvertraeglichkeitennogos;
 
   app.get('/shuffle', (req, res) => {
         console.log('Request for nogos page recieved');
-        res.render('shuffle', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe,gewohnheitsbezeichnung});
+        res.render('shuffle', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung, zutatennogos, gewohnheitennogos, unvertraeglichkeitennogos});
     })
 
   app.get('/login', (req, res) => {
@@ -123,7 +143,7 @@ var unvertraeglichkeitennogos;
 
   app.get('/', (req, res) => {
       console.log('Request for home recieved');
-      res.render('index', {zutatennogos, gewohnheitennogos, unvertraeglichkeitennogos});
+      res.render('index', {gerichttitel, idgericht, idzutat, bezeichnung, menge, mengenangabe, idessensgewohnheiten, gewohnheitsbezeichnung, idunvertraeglichkeiten, unvertraeglichkeitenbezeichnung, zutatennogos, gewohnheitennogos, unvertraeglichkeitennogos});
   })
 
 
