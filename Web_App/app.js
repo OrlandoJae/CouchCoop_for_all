@@ -134,7 +134,7 @@ var unvertraeglichkeitenliste;
         };
         console.log(gerichte[0]);
     });
-    console.log(gerichte[0]);
+    console.log(gerichte);
 
     con.query("SELECT * FROM zutat", function (err, result, fields) {
       if (err) throw err;
