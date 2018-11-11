@@ -85,7 +85,9 @@ class Zutat {/*
     this.nummer = id;
     this.bezeichnung = bezeichnung;
   }
+}
 
+class Zutathinzu {
   constructor (id, bezeichnung, menge, mengenangabe) {
     this.id = id;
     this.bezeichnung = bezeichnung;
@@ -94,7 +96,7 @@ class Zutat {/*
   }
 }
 
-class Essgewohnheiten {/*
+class Essgewohnheit {/*
   var id;
   var name;*/
 
@@ -104,7 +106,7 @@ class Essgewohnheiten {/*
   }
 }
 
-class Unvertraeglichkeit{/*
+class Unvertraeglichkeit {/*
   var id;
   var name;*/
 
@@ -130,7 +132,9 @@ var unvertraeglichkeitenliste;
           gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person);
           console.log("Gericht" + i + ": " + gerichttitel[i]);
         };
+        console.log(gerichte[0]);
     });
+    console.log(gerichte[0]);
 
     con.query("SELECT * FROM zutat", function (err, result, fields) {
       if (err) throw err;
@@ -151,9 +155,9 @@ var unvertraeglichkeitenliste;
        mengenangabe = new Array(result.length);
        console.log("Rezept:idgericht,idzutat,menge,mengenangabe");
         for (var i = 0; i < result.length; i++) {
-          for (var k = 0; k < rezepte.length; k++) {
-            if (rezepte[k].id = i) {
-              rezepte[k].zutaten.push(new Zutat(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung, result[i].menge, result[i].mengenangabe));
+          for (var k = 0; k < gerichte.length; k++) {
+            if (gerichte[k].id = i) {
+              gerichte[k].addZutat(new Zutathinzu(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung, result[i].menge, result[i].mengenangabe));
             }
           }
           idgericht[i] = result[i].idgericht;
@@ -185,7 +189,7 @@ var unvertraeglichkeitenliste;
         idunvertraeglichkeiten = new Array(result.length);
         unvertraeglichkeitenbezeichnung = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
-          unvertraeglichkeitenliste[i] = new Unverträglichkeit(result[i].idunvertraeglichkeiten, result[i].unvertraeglichkeitenbezeichnung);
+          unvertraeglichkeitenliste[i] = new Unvertraeglichkeit(result[i].idunvertraeglichkeiten, result[i].unvertraeglichkeitenbezeichnung);
           idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
           unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
           console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
@@ -199,10 +203,10 @@ var unvertraeglichkeitenliste;
           for (var k = 0; k < gerichte.length; k++) {
             if (gerichte[k].id == result[i].idgericht) {
               if (result[i].idessensgewohnheiten >= 0) {
-                gerichte[k].essgewohnheiten.push(essgewohnheitenliste[result[i].idessensgewohnheiten].name);
+                gerichte[k].addEssgewohnheit(essgewohnheitenliste[result[i].idessensgewohnheiten].name);
               }
               if (result[i].idunvertraeglichkeiten >= 0) {
-                gerichte[k].unvertraeglichkeiten.push(unvertraeglichkeitenliste[result[i],idunvertraeglichkeiten].name);
+                gerichte[k].addUnvertraeglichkeit(unvertraeglichkeitenliste[result[i],idunvertraeglichkeiten].name);
               }
             }
           }
