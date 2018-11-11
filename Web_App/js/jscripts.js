@@ -64,6 +64,7 @@ function suchFunktionD() {
 var zutatennogos;
 var unvertraeglichkeitennogos;
 var gewohnheitennogos;
+var gerichte;
 
 function saveNogos(a, b, c) {
   zutatennogos = a;
@@ -88,5 +89,13 @@ function saveNogos(a, b, c) {
         }
       }
     }
+  }
+}
+
+function shuffle(input) {
+  gerichte = input;
+  gerichteMoeglich = gerichte.slice();
+  for (var i = 0; i < gerichte.lenth; i++) {
+    
   }
 }
