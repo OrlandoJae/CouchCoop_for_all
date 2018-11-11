@@ -132,9 +132,8 @@ var unvertraeglichkeitenliste;
           gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person);
           console.log("Gericht" + i + ": " + gerichttitel[i]);
         };
-        console.log(gerichte[0]);
+        console.log(gerichte);
     });
-    console.log(gerichte);
 
     con.query("SELECT * FROM zutat", function (err, result, fields) {
       if (err) throw err;
@@ -201,16 +200,17 @@ var unvertraeglichkeitenliste;
       if (err) throw err;
         for (var i = 0; i < result.length; i++) {
           for (var k = 0; k < gerichte.length; k++) {
-            if (gerichte[k].id == result[i].idgericht) {
-              if (result[i].idessensgewohnheiten >= 0) {
-                gerichte[k].addEssgewohnheit(essgewohnheitenliste[result[i].idessensgewohnheiten].name);
+            if (gerichte[k].nummer == result[i].idgericht) {
+              if (result[i].idessensgewohnheiten != null) {
+                gerichte[k].addEssgewohnheit(essgewohnheitenliste[result[i].idessensgewohnheiten].bezeichnung);
               }
-              if (result[i].idunvertraeglichkeiten >= 0) {
-                gerichte[k].addUnvertraeglichkeit(unvertraeglichkeitenliste[result[i],idunvertraeglichkeiten].name);
+              if (result[i].idunvertraeglichkeiten != null) {
+                gerichte[k].addUnvertraeglichkeit(unvertraeglichkeitenliste[result[i].idunvertraeglichkeiten].bezeichnung);
               }
             }
           }
         };
+        console.log(gerichte);
     });
 
   });
