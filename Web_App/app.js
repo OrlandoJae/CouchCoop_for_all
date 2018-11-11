@@ -42,19 +42,92 @@ var zutatennogos;
 var gewohnheitennogos;
 var unvertraeglichkeitennogos;
 
-class gericht {
-  var zutaten;
-  var unvertraeglichkeiten;
-  var essgewohnheiten;
+class Gericht {
+
+  /*var unvertraeglichkeiten = new Array();
+  var essgewohnheiten = new Array();
+  var zutaten = new Array();
+  var zubereitung;
+  var anzahlPersonen;
+  var nummer;
+  var bezeichnung;*/
+
+  constructor (id, name, anzahlPersonen) {
+    this.nummer = id;
+    this.bezeichnung = name;
+    this.anzahlPersonen = anzahlPersonen;
+  }
+
+  addUnvertraeglichkeit(bezeichnung) {
+    this.unvertraeglichkeiten = new Array();
+    this.unvertraeglichkeiten.push(bezeichnung);
+  }
+
+  addEssgewohnheit(bezeichnung) {
+    this.essgewohnheiten = new Array();
+    this.essgewohnheiten.push(bezeichnung);
+  }
+
+  addZutat(zutat) {
+    this.zutaten = new Array();
+    this.zutaten.push(zutat);
+  }
+
 }
+
+class Zutat {/*
+  var nummer;
+  var bezeichnung;
+  var menge;
+  var mengenangabe;*/
+
+  constructor (id, bezeichnung) {
+    this.nummer = id;
+    this.bezeichnung = bezeichnung;
+  }
+
+  constructor (id, bezeichnung, menge, mengenangabe) {
+    this.id = id;
+    this.bezeichnung = bezeichnung;
+    this.menge = menge;
+    this.mengenangabe = mengenangabe;
+  }
+}
+
+class Essgewohnheiten {/*
+  var id;
+  var name;*/
+
+  constructor (id, name) {
+    this.id = id;
+    this.name = name;
+  }
+}
+
+class Unvertraeglichkeit{/*
+  var id;
+  var name;*/
+
+  constructor (id, name) {
+    this.id = id;
+    this.name = name;
+  }
+}
+
+var gerichte;
+var zutatenliste;
+var essgewohnheitenliste;
+var unvertraeglichkeitenliste;
 
   con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM gericht", function (err, result, fields) {
       if (err) throw err;
-       gerichttitel = new Array(result.length);
+        gerichte = new Array(result.length);
+        gerichttitel = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           gerichttitel[i] = result[i].titel;
+          gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person);
           console.log("Gericht" + i + ": " + gerichttitel[i]);
         };
     });
@@ -62,8 +135,10 @@ class gericht {
     con.query("SELECT * FROM zutat", function (err, result, fields) {
       if (err) throw err;
        bezeichnung = new Array(result.length);
+       zutatenliste = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           bezeichnung[i] = result[i].bezeichnung;
+          zutatenliste[i] = new Zutat(result[i].id, result[i].bezeichnung);
           console.log("Zutatbezeichnng" + i +": " + bezeichnung[i])
         };
     });
@@ -76,6 +151,11 @@ class gericht {
        mengenangabe = new Array(result.length);
        console.log("Rezept:idgericht,idzutat,menge,mengenangabe");
         for (var i = 0; i < result.length; i++) {
+          for (var k = 0; k < rezepte.length; k++) {
+            if (rezepte[k].id = i) {
+              rezepte[k].zutaten.push(new Zutat(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung, result[i].menge, result[i].mengenangabe));
+            }
+          }
           idgericht[i] = result[i].idgericht;
           idzutat[i] = result[i].idzutat;
           menge[i] = result[i].menge;
@@ -87,9 +167,11 @@ class gericht {
 
     con.query("SELECT * FROM essensgewohnheiten", function (err, result, fields) {
       if (err) throw err;
-       idessensgewohnheiten = new Array(result.length);
-       gewohnheitsbezeichnung = new Array(result.length);
+        essgewohnheitenliste = new Array(result.length)
+        idessensgewohnheiten = new Array(result.length);
+        gewohnheitsbezeichnung = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
+          essgewohnheitenliste[i] = new Essgewohnheit(result[i].essensgewohnheiten, result[i].gewohnheitsbezeichnung);
           gewohnheitsbezeichnung[i] = result[i].gewohnheitsbezeichnung;
           idessensgewohnheiten[i] = result[i].idessensgewohnheiten;
           console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );
@@ -99,9 +181,11 @@ class gericht {
 
     con.query("SELECT * FROM unvertraeglichkeiten", function (err, result, fields) {
       if (err) throw err;
-       idunvertraeglichkeiten = new Array(result.length);
-       unvertraeglichkeitenbezeichnung = new Array(result.length);
+        unvertraeglichkeitenliste = new Array(result.length);
+        idunvertraeglichkeiten = new Array(result.length);
+        unvertraeglichkeitenbezeichnung = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
+          unvertraeglichkeitenliste[i] = new Unverträglichkeit(result[i].idunvertraeglichkeiten, result[i].unvertraeglichkeitenbezeichnung);
           idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
           unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
           console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
@@ -111,13 +195,17 @@ class gericht {
 
     con.query("SELECT * FROM nogos", function (err, result, fields) {
       if (err) throw err;
-       gerichte = new Array(result.length);
-       essensgewohnheiten = new Array(result.length);
-       unvertraeglichkeiten = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
-          gerichte[i] = result[i].idgericht;
-          unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
-          console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
+          for (var k = 0; k < gerichte.length; k++) {
+            if (gerichte[k].id == result[i].idgericht) {
+              if (result[i].idessensgewohnheiten >= 0) {
+                gerichte[k].essgewohnheiten.push(essgewohnheitenliste[result[i].idessensgewohnheiten].name);
+              }
+              if (result[i].idunvertraeglichkeiten >= 0) {
+                gerichte[k].unvertraeglichkeiten.push(unvertraeglichkeitenliste[result[i],idunvertraeglichkeiten].name);
+              }
+            }
+          }
         };
     });
 
