@@ -43,31 +43,32 @@ var gewohnheitennogos;
 var unvertraeglichkeitennogos;
 
 class Gericht {
-  constructor (id, name, anzahlPersonen) {
+  constructor (id, name, anzahlPersonen, zubereitung) {
     this.nummer = id;
     this.bezeichnung = name;
     this.anzahlPersonen = anzahlPersonen;
+    this.zubereitung = zubereitung;
+    this.zutaten = new Array();
+    this.essgewohnheiten = new Array();
+    this.unvertraeglichkeiten = new Array();
   }
 
   addUnvertraeglichkeit(bezeichnung) {
-    this.unvertraeglichkeiten = new Array();
     this.unvertraeglichkeiten.push(bezeichnung);
   }
 
   addEssgewohnheit(bezeichnung) {
-    this.essgewohnheiten = new Array();
     this.essgewohnheiten.push(bezeichnung);
   }
 
   addZutat(zutat) {
-    this.zutaten = new Array();
     this.zutaten.push(zutat);
   }
 
 }
 
 class Zutat {constructor (id, bezeichnung) {
-    this.nummer = id;
+    this.id = id;
     this.bezeichnung = bezeichnung;
   }
 }
@@ -108,8 +109,9 @@ var unvertraeglichkeitenliste;
         gerichttitel = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           gerichttitel[i] = result[i].titel;
-          gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person);
-          console.log("Gericht" + i + ": " + gerichttitel[i]);
+          gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person, result[i].zubereitung);
+          /*console.log("Gericht" + i + ": " + gerichttitel[i]);*/
+          console.log("Gericht " + gerichte[i].nummer + " :" + gerichte[i].bezeichnung + ", für " + gerichte[i].anzahlPersonen + " Personen.");
         };
     });
 
@@ -119,8 +121,9 @@ var unvertraeglichkeitenliste;
        zutatenliste = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           bezeichnung[i] = result[i].bezeichnung;
-          zutatenliste[i] = new Zutat(result[i].id, result[i].bezeichnung);
-          console.log("Zutatbezeichnng" + i +": " + bezeichnung[i])
+          zutatenliste[i] = new Zutat(i, result[i].bezeichnung);
+          /*console.log("Zutatbezeichnng" + i +": " + bezeichnung[i])*/
+          console.log("Zutat " + zutatenliste[i].id + " : " + zutatenliste[i].bezeichnung);
         };
     });
 
@@ -130,20 +133,24 @@ var unvertraeglichkeitenliste;
        idzutat = new Array(result.length);
        menge = new Array(result.length);
        mengenangabe = new Array(result.length);
-       console.log("Rezept:idgericht,idzutat,menge,mengenangabe");
+       /*console.log("Rezept:idgericht,idzutat,menge,mengenangabe");*/
         for (var i = 0; i < result.length; i++) {
-          for (var k = 0; k < gerichte.length; k++) {
-            if (gerichte[k].id = i) {
-              gerichte[k].addZutat(new Zutathinzu(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung, result[i].menge, result[i].mengenangabe));
-            }
-          }
           idgericht[i] = result[i].idgericht;
           idzutat[i] = result[i].idzutat;
           menge[i] = result[i].menge;
           mengenangabe[i] = result[i].mengenangabe;
-          console.log("Rezept:" + idgericht[i] + "," + idzutat[i] + "," + menge[i] + "," + mengenangabe[i]);
+          for (var k = 0; k < gerichte.length; k++) {
+              if (gerichte[k].nummer == result[i].idgericht) {
+              gerichte[k].addZutat(new Zutathinzu(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung.toUpperCase(), result[i].menge, result[i].mengenangabe));
+            }
+          }
+          /*console.log("Rezept:" + idgericht[i] + "," + idzutat[i] + "," + menge[i] + "," + mengenangabe[i]);*/
         };
         zutatennogos = new Array(idzutat.length-1);
+        /*for (var i = 0; i < 3; i++) {
+          console.log(gerichte[i].bezeichnung);
+          console.log(gerichte[i].zutaten);
+        }*/
     });
 
     con.query("SELECT * FROM essensgewohnheiten", function (err, result, fields) {
@@ -155,7 +162,7 @@ var unvertraeglichkeitenliste;
           essgewohnheitenliste[i] = new Essgewohnheit(result[i].essensgewohnheiten, result[i].gewohnheitsbezeichnung);
           gewohnheitsbezeichnung[i] = result[i].gewohnheitsbezeichnung;
           idessensgewohnheiten[i] = result[i].idessensgewohnheiten;
-          console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );
+          /*console.log("Essensgewohnheiten:" + idessensgewohnheiten[i] );*/
         };
         gewohnheitennogos = new Array (idessensgewohnheiten.length);
     });
@@ -169,7 +176,7 @@ var unvertraeglichkeitenliste;
           unvertraeglichkeitenliste[i] = new Unvertraeglichkeit(result[i].idunvertraeglichkeiten, result[i].unvertraeglichkeitenbezeichnung);
           idunvertraeglichkeiten[i] = result[i].idunvertraeglichkeiten;
           unvertraeglichkeitenbezeichnung[i] = result[i].unvertraeglichkeitenbezeichnung;
-          console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);
+          /*console.log("Unverträglichkeiten:" + idunvertraeglichkeiten[i] + "Bezeichnung:" + unvertraeglichkeitenbezeichnung[i]);*/
         };
         unvertraeglichkeitennogos = new Array (idunvertraeglichkeiten);
     });
@@ -180,10 +187,11 @@ var unvertraeglichkeitenliste;
           for (var k = 0; k < gerichte.length; k++) {
             if (gerichte[k].nummer == result[i].idgericht) {
               if (result[i].idessensgewohnheiten != null) {
-                gerichte[k].addEssgewohnheit(essgewohnheitenliste[result[i].idessensgewohnheiten].bezeichnung);
+                /*console.log("essgewohnheit id: " + )*/
+                gerichte[k].addEssgewohnheit(essgewohnheitenliste[result[i].idessensgewohnheiten].name.toUpperCase());
               }
               if (result[i].idunvertraeglichkeiten != null) {
-                gerichte[k].addUnvertraeglichkeit(unvertraeglichkeitenliste[result[i].idunvertraeglichkeiten].bezeichnung);
+                gerichte[k].addUnvertraeglichkeit(unvertraeglichkeitenliste[result[i].idunvertraeglichkeiten].name.toUpperCase());
               }
             }
           }

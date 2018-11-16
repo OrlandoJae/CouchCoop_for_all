@@ -60,42 +60,100 @@ function suchFunktionD() {
     }
   }
 }
-/*Arrays, die als Parameter für Shuffle dienen*/
+
+
 var zutatennogos;
 var unvertraeglichkeitennogos;
 var gewohnheitennogos;
 var gerichte;
+var gerichteMoeglich;
+var wahlGericht;
 
-function saveNogos(a, b, c) {
-  zutatennogos = a;
-  unvertraeglichkeitennogos = b;
-  gewohnheitennogos = c;
+
+
+function saveNogos() {
+  zutatennogos = new Array();
+  unvertraeglichkeitennogos = new Array();
+  gewohnheitennogos = new Array();
   var checkboxen = document.getElementsByTagName('input');
-  var j = k = l = 0; /*Index für die einzelnen Arrays*/
   for (var i=0; i < checkboxen.length; i++) {
     if (checkboxen[i].getAttribute('type')=='checkbox'){
       if (checkboxen[i].checked == true) {
         if (checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('essgewohnheiten-dropdownD')){
-          gewohnheitennogos[j] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
-          j++;
+          gewohnheitennogos.push(checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase());
         }
         if (checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('zutaten-dropdownD')){
-          zutatennogos[k] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
-          k++;
+          zutatennogos.push(checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase());
         }
         if (checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdown') || checkboxen[i].parentNode.parentNode == document.getElementById('allergien-dropdownD')){
-          unvertraeglichkeitennogos[l] = checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase();
-          l++;
+          unvertraeglichkeitennogos.push(checkboxen[i].previousSibling.previousElementSibling.innerHTML.toUpperCase());
         }
       }
     }
   }
+  sessionStorage.setItem('zutatennogos', JSON.stringify(zutatennogos));
+  sessionStorage.setItem('gewohnheitennogos', JSON.stringify(gewohnheitennogos));
+  sessionStorage.setItem('unvertraeglichkeitennogos', JSON.stringify(unvertraeglichkeitennogos));
 }
 
+
 function shuffle(input) {
-  gerichte = input;
-  gerichteMoeglich = gerichte.slice();
-  for (var i = 0; i < gerichte.lenth; i++) {
-    
+  var zutatennogos = JSON.parse(sessionStorage.getItem('zutatennogos'));
+  var gewohnheitennogos = JSON.parse(sessionStorage.getItem('gewohnheitennogos'));
+  var unvertraeglichkeitennogos = JSON.parse(sessionStorage.getItem('unvertraeglichkeitennogos'));
+  var moeglich = true;
+  var gerichte = input;
+  gerichteMoeglich = new Array();
+  for (var i = 0; i < gerichte.length; i++) {
+    /*Zutatenfilter*/
+    for (var k = 0; k < zutatennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].zutaten.length; j++) {
+        if (zutatennogos[k] == gerichte[i].zutaten[j].bezeichnung) {
+          moeglich = false;
+        }
+      }
+    }
+    /*Essgewohnheitenfilter*/
+    for (var k = 0; k < gewohnheitennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].essgewohnheiten.length; j++) {
+        if (gewohnheitennogos[k] == gerichte[i].essgewohnheiten[j]) {
+          moeglich = false;
+        }
+      }
+    }
+    /*Unverträglichkeiten Filter*/
+    for (var k = 0; k < unvertraeglichkeitennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].unvertraeglichkeiten.length; j++) {
+        if (unvertraeglichkeitennogos[k] == gerichte[i].unvertraeglichkeiten) {
+          moeglich = false;
+        }
+      }
+    }
+    /*Füllen des Arrays möglicher Gerichte*/
+    if (moeglich) {
+      gerichteMoeglich.push(gerichte[i]);
+    }
   }
+  console.log(gerichteMoeglich.length);
+  /*Zufallswahl aus möglichen Gerichten*/
+  var idGericht = Math.floor(Math.random() * gerichteMoeglich.length);
+  /*console.log(idGericht);*/
+  for (var i = 0; i < gerichte.length; i++) {
+    if (gerichte[i].nummer == idGericht) {
+      wahlGericht = gerichte[i];
+    }
+  }
+  sessionStorage.setItem('wahlGericht', JSON.stringify(wahlGericht));
+}
+
+function gerichtToString() {
+  var wahlGericht = JSON.parse(sessionStorage.getItem('wahlGericht'));
+  document.getElementById('gerichttitel').innerHTML = wahlGericht.bezeichnung;
+  var zutatenliste;
+  zutatenliste = new String("Zutaten: \r\n")
+  for (var i = 0; i < wahlGericht.zutaten.length; i++) {
+    zutatenliste = zutatenliste + wahlGericht.zutaten[i].menge + " " + wahlGericht.zutaten[i].mengenangabe + " " + wahlGericht.zutaten[i].bezeichnung + "\n";
+  }
+  document.getElementById('zutatenliste').innerHTML = zutatenliste;
+  document.getElementById('zubereitung').innerHTML = wahlGericht.zubereitung;
 }

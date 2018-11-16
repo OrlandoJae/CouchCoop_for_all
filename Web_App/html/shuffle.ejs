@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
    <% include teilstruktur/head %>
-<body>
+<body onload="gerichtToString()">
 
     <!-- mittlerer Bereich (dynamisch)-->
     <div class="middlebox">
@@ -18,24 +18,12 @@
             </a>
         </div>
 
-          <%
-            var zutat = new Array(idzutat.length);
-            var x = Math.floor(Math.random() * gerichttitel.length);
-            var l = 0;
-            for (var i = 0; i < idgericht.length; i++) {
-              if (idgericht[i] == x) {
-                zutat[l] = bezeichnung[idzutat[i]];
-                l = l+1;
-              }
-            }
-          %>
-
         <div class="textbox">
-          <h1><%= gerichttitel[x] %></h1>
-          <p>
-            <% for (var i = 0; i < l; i++) {%>
-            <%= zutat[i] %><br>
-            <% } %>
+          <h1 id="gerichttitel">
+          </h1>
+          <p id="zutatenliste">
+          </p>
+          <p id="zubereitung">
           </p>
         </div>
 
