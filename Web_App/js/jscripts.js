@@ -139,5 +139,12 @@ function shuffle(input) {
 }
 
 function gerichtToString() {
-  
+  document.getElementById('gerichttitel').innerHTML = wahlGericht.bezeichnung;
+  var zutatenliste;
+  zutatenliste = new String("Zutaten: \n")
+  for (var i = 0; i < wahlGericht.zutaten.length; i++) {
+    zutatenliste = zutatenliste + wahlGericht.zutaten.menge + " " + wahlGericht.zutaten.mengenangabe + " " + wahlGericht.zutaten.bezeichnung + "\n";
+  }
+  document.getElementById('zutatenliste').innerHTML = zutatenliste;
+  document.getElementById('zubereitung').innerHTML = wahlGericht.zubereitung;
 }
