@@ -154,14 +154,7 @@
             <button id="abbrechenD"><p>Abbrechen</p></button>
           </a>
           <!-- Bestätigen-Button  -->
-          <script>
-          /* nötig, um EJS-Variablen an JavaScript zu übergeben: */
-          var a = new Array(<%=idzutat.length%>);
-          var b = new Array(<%=idunvertraeglichkeiten.length%>);
-          var c = new Array(<%=idessensgewohnheiten.length%>);
-          </script>
-
-          <a href="/" onclick="saveNogos(a, b, c)">
+          <a href="/" onclick="saveNogos()">
             <button id="bestaetigeD"><p>Bestätigen</p></button>
           </a>
         </div>
