@@ -93,6 +93,7 @@ function saveNogos(a, b, c) {
 }
 
 var gerichteMoeglich;
+var wahlGericht;
 
 function shuffle(input) {
   var moeglich = true;
@@ -123,8 +124,20 @@ function shuffle(input) {
         }
       }
     }
+    /*Füllen des Arrays möglicher Gerichte*/
     if (moeglich) {
       gerichteMoeglich.push(gerichte[i]);
     }
   }
+  /*Zufallswahl aus möglichen Gerichten*/
+  var idGericht = Math.floor(Math.random() * gerichteMoeglich.length);
+  for (var i = 0; i < gerichte; i++) {
+    if (gerichte[i].nummer == idGericht) {
+      wahlGericht = gerichte[i];
+    }
+  }
+}
+
+function gerichtToString() {
+  
 }
