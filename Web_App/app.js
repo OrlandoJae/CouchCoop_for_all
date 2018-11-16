@@ -43,10 +43,11 @@ var gewohnheitennogos;
 var unvertraeglichkeitennogos;
 
 class Gericht {
-  constructor (id, name, anzahlPersonen) {
+  constructor (id, name, anzahlPersonen, zubereitung) {
     this.nummer = id;
     this.bezeichnung = name;
     this.anzahlPersonen = anzahlPersonen;
+    this.zubereitung = zubereitung;
     this.zutaten = new Array();
     this.essgewohnheiten = new Array();
     this.unvertraeglichkeiten = new Array();
@@ -108,7 +109,7 @@ var unvertraeglichkeitenliste;
         gerichttitel = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           gerichttitel[i] = result[i].titel;
-          gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person);
+          gerichte[i] = new Gericht(result[i].idgericht, result[i].titel, result[i].person, result[i].zubereitung);
           /*console.log("Gericht" + i + ": " + gerichttitel[i]);*/
           console.log("Gericht " + gerichte[i].nummer + " :" + gerichte[i].bezeichnung + ", für " + gerichte[i].anzahlPersonen + " Personen.");
         };
