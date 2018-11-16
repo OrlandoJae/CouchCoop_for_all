@@ -92,10 +92,39 @@ function saveNogos(a, b, c) {
   }
 }
 
+var gerichteMoeglich;
+
 function shuffle(input) {
-  gerichte = input;
-  gerichteMoeglich = gerichte.slice();
-  for (var i = 0; i < gerichte.lenth; i++) {
-    
+  var moeglich = true;
+  var gerichte = input;
+  gerichteMoeglich = new Array();
+  for (var i = 0; i < gerichte.length; i++) {
+    /*Zutatenfilter*/
+    for (var k = 0; k < zutatennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].zutaten.length; j++) {
+        if (zutatennogos[k] == gerichte[i].zutaten[j].bezeichnung) {
+          moeglich = false;
+        }
+      }
+    }
+    /*Essgewohnheitenfilter*/
+    for (var k = 0; k < gewohnheitennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].essgewohnheiten.length; j++) {
+        if (gewohnheitennogos[k] == gerichte[i].essgewohnheiten[j]) {
+          moeglich = false;
+        }
+      }
+    }
+    /*Unverträglichkeiten Filter*/
+    for (var k = 0; k < unvertraeglichkeitennogos.length; k++) {
+      for (var j = 0; j < gerichte[i].unvertraeglichkeiten.length; j++) {
+        if (unvertraeglichkeitennogos[k] == gerichte[i].unvertraeglichkeiten) {
+          moeglich = false;
+        }
+      }
+    }
+    if (moeglich) {
+      gerichteMoeglich.push(gerichte[i]);
+    }
   }
 }
