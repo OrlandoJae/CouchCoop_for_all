@@ -1,0 +1,73 @@
+<!DOCTYPE>
+<html>
+   <% include teilstruktur/head %>
+<body>
+
+    <!-- mittlerer Bereich (dynamisch)-->
+    <div class="middlebox">
+
+        <div class="navbar">
+            <a id="shufflenav" href="shuffle">Shuffle</a>
+            <a id="nogosnav" href="nogos">NoGo's</a>
+            <a id="loginnav" href="login">Login</a>
+            <a id="ragistrationnav" href="regis">Registration</a>
+        </div>
+
+
+        <div id="logo">
+            <a id="home" href="/">
+            <img src="bg.png" alt="What2Eat">
+            </a>
+        </div>
+
+
+        <div id="mobil_index" class="textbox">
+
+                <a class="button" href="shuffle">Registration</a>
+                <a class="button" href="nogos">Login</a>
+
+        </div>
+
+        <div id="desktop_index" class="textbox">
+
+            <p class="text">
+                Du bist untentschlossen?<br>
+                Lasse dich &uuml;berraschen und dr&uuml;cke auf Shuffle,<br>
+                damit ein zuf&auml;lliges Rezept generiert wird!
+            </p>
+
+            <script>
+              /*Übergabe der Daten aus der Datenbank an Javascript*/
+              /*var gerichttitel = <%=gerichttitel%>;
+              var idgericht = <%=idgericht%>;
+              var idzutaten = <%=idzutat%>;
+              var bezeichnung = <%=bezeichnung%>;
+              var menge = <%=menge%>;
+              var mengenangabe = <%=mengenangabe%>;
+              var gewohnheitsbezeichnung = <%=gewohnheitsbezeichnung%>;
+              var idessensgewohnheiten = <%=idessensgewohnheiten%>;
+              var unvertraeglichkeitenbezeichnung = <%=unvertraeglichkeitenbezeichnung%>;
+              var idunvertraeglichkeiten = <%=idunvertraeglichkeiten%>;*/
+              var gerichte = <%- JSON.stringify(gerichte) %>;
+            </script>
+
+            <p class="link">
+                <a class="button" href="shuffle" onclick="shuffle(gerichte)">Shuffle</a>
+            </p>
+
+            <p class="text">
+                Gibt es Zutaten, die du in einem Gericht<br>
+                nicht m&ouml;chtest oder vertr&auml;gst..<br>
+                Lasse es uns wissen und setze deine Go's und NoGo's
+            </p>
+
+            <p class="link">
+                <a class="button" href="nogos">NoGo's</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE>
+<html>
+<% include teilstruktur/head %>
+<body>
+
+  <!-- mittlerer Bereich (dynamisch)-->
+  <div class="middlebox">
+      <!-- Navbar -->
+      <div id="navbarbg">
+      </div>
+
+      <div class="navbar">
+          <a id="Nogonav">No-Go's</a>
+          <a id="shufflenav">Shuffle</a>
+          <a id="profilenav">Profil</a>
+      </div>
+
+      <div id="logo">
+          <a id="home" href="/">
+          <img src="bg.png" alt="What2Eat">
+          </a>
+      </div>
+
+
+      <div id="mobil_index">
+        <!-- Bereich der No-Go-Buttons -->
+        <!-- UNVERTRÄGLICHKEITEN -->
+        <!-- Button -->
+        <button id="allergien" class="dropdown" onclick="showAllergien()">
+          <a>Unverträglichkeiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="allergien-dropdown" class="dropdown-content">
+          <% for (var i = 0; i < idunvertraeglichkeiten.length; i++) { %>
+          <label class="container">
+            <a><%= unvertraeglichkeitenbezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+
+        <!-- ESSGEWOHNHEITEN -->
+        <!-- Button -->
+        <button id="essgewohnheiten"  class="dropdown" onclick="showEssgewohnheiten()">
+          <a>Essgewohnheiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="essgewohnheiten-dropdown" class="dropdown-content">
+          <% for (var i = 0; i < idessensgewohnheiten.length; i++) { %>
+          <label class="container">
+            <a><%= gewohnheitsbezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+
+        <!-- EINZELNE ZUTATEN -->
+        <!-- Button -->
+        <button id="einzelneZutaten"  class="dropdown" onclick="showZutaten()">
+          <a>Einzelne Zutaten abwählen</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="zutaten-dropdown" class="dropdown-content">
+          <input class="search" id="zutatenSuche" type="text" placeholder="Suche.." onkeyup="suchFunktion()">
+          <% for (var i = 0; i < idzutat.length; i++) { %>
+          <label class="container">
+            <a><%= bezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+
+        <!-- Bereich der Buttons zum Speichern oder Abbrechen -->
+        <div class="bestaetigungsBereich">
+          <!-- Abbrechen-Button -->
+          <button id="abbrechen">
+            <a>Abbrechen</a>
+          </button>
+          <!-- Bestätigen-Button -->
+          <button id="bestaetige">
+            <a>Bestätigen</a>
+          </button>
+        </div>
+
+      </div>
+
+      <div id="desktop_index" class="textbox">
+        <!-- Bereich der NO-GO-Buttons -->
+        <!-- UNVERTRÄGLICHKEITEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="allergienD" class="dropdown" onclick="showAllergien()">
+          <a>Unverträglichkeiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="allergien-dropdownD" class="dropdown-content">
+          <% for (var i = 0; i < idunvertraeglichkeiten.length; i++) { %>
+          <label class="container">
+            <a><%= unvertraeglichkeitenbezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+      </div>
+        <!-- ESSGEWOHNHEITEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="essgewohnheitenD"  class="dropdown" onclick="showEssgewohnheiten()">
+          <a>Essgewohnheiten</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="essgewohnheiten-dropdownD" class="dropdown-content">
+          <% for (var i = 0; i < idessensgewohnheiten.length; i++) { %>
+          <label class="container">
+            <a><%= gewohnheitsbezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+      </div>
+        <!-- EINZELNE ZUTATEN -->
+        <!-- Button -->
+        <div class="helpContainer">
+        <button id="einzelneZutatenD"  class="dropdown" onclick="showZutaten()">
+          <a>Einzelne Zutaten abwählen</a>
+        </button>
+
+        <!-- Inhalt des Dropdowns -->
+        <div id="zutaten-dropdownD" class="dropdown-content">
+          <input class="search" id="zutatenSucheD" type="text" placeholder="Suche.." onkeyup="suchFunktionD()">
+          <% for (var i = 0; i < idzutat.length-1; i++) { %>
+          <label class="container">
+            <a><%= bezeichnung[i]; %></a>
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <% } %>
+        </div>
+      </div>
+        <!-- Bereich der Buttons zum Speichern oder Abbrechen -->
+        <div class="bestaetigungsBereich">
+          <!-- Abbrechen-Button -->
+          <a href ="/">
+            <button id="abbrechenD"><p>Abbrechen</p></button>
+          </a>
+          <!-- Bestätigen-Button  -->
+          <a href="/" onclick="saveNogos()">
+            <button id="bestaetigeD"><p>Bestätigen</p></button>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+</body>
+</html>
