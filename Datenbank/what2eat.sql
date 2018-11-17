@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 17. Nov 2018 um 08:53
+-- Erstellungszeit: 17. Nov 2018 um 09:05
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -140,7 +140,7 @@ INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkei
 --
 
 CREATE TABLE `zutat` (
-  `zutatid` int(11) NOT NULL,
+  `idzutat` int(11) NOT NULL,
   `bezeichnung` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -148,7 +148,7 @@ CREATE TABLE `zutat` (
 -- Daten für Tabelle `zutat`
 --
 
-INSERT INTO `zutat` (`zutatid`, `bezeichnung`) VALUES
+INSERT INTO `zutat` (`idzutat`, `bezeichnung`) VALUES
 (1, 'Tomaten'),
 (2, 'Baguette'),
 (3, 'Sahne'),
@@ -202,7 +202,7 @@ ALTER TABLE `unvertraeglichkeiten`
 -- Indizes für die Tabelle `zutat`
 --
 ALTER TABLE `zutat`
-  ADD PRIMARY KEY (`zutatid`);
+  ADD PRIMARY KEY (`idzutat`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
@@ -230,7 +230,7 @@ ALTER TABLE `unvertraeglichkeiten`
 -- AUTO_INCREMENT für Tabelle `zutat`
 --
 ALTER TABLE `zutat`
-  MODIFY `zutatid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idzutat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
