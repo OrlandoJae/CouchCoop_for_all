@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Nov 2018 um 15:03
+-- Erstellungszeit: 17. Nov 2018 um 09:05
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.11
 
@@ -40,8 +40,7 @@ CREATE TABLE `essensgewohnheiten` (
 INSERT INTO `essensgewohnheiten` (`idessensgewohnheiten`, `gewohnheitsbezeichnung`) VALUES
 (0, 'vegan'),
 (1, 'low-carb'),
-(2, 'vegetarisch'),
-(3, 'Alles');
+(2, 'vegetarisch');
 
 -- --------------------------------------------------------
 
@@ -52,17 +51,20 @@ INSERT INTO `essensgewohnheiten` (`idessensgewohnheiten`, `gewohnheitsbezeichnun
 CREATE TABLE `gericht` (
   `idgericht` int(11) NOT NULL,
   `titel` varchar(50) NOT NULL,
-  `person` varchar(10) NOT NULL
+  `person` varchar(10) NOT NULL,
+  `zubereitung` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `gericht`
 --
 
-INSERT INTO `gericht` (`idgericht`, `titel`, `person`) VALUES
-(0, 'Chilli Sin carne', '4'),
-(1, 'Hamburger', '3'),
-(2, 'Tomatensuppe', '4');
+INSERT INTO `gericht` (`idgericht`, `titel`, `person`, `zubereitung`) VALUES
+(0, 'Chilli Sin carne', '4', '1.	Bitte schneiden Sie die Chili auf und Entkernen diese. Danach schneiden Sie die Chili in feine Streifen. \r\n2.	Die Zwiebel und den Knoblauch bitte ebenfalls fein würfeln.\r\n3.	Eine Pfanne auf den Herd stellen und etwas Butter hinein legen. \r\nSobald die Pfanne heiß ist können Sie die Chili den Knoblauch und die Zwiebel dazu geben.\r\n4.	Das alles etwas anbraten lassen. \r\n5.	Jetzt lassen sie die Bohnen und den Mais in ein Sieb abtropfen. Danach geben sie die Bohnen und den Mais 	ebenfalls in die Pfanne.\r\n6.	Die passierten Tomaten können sie nun ebenfalls in die Pfanne geben. \r\nDie Pfanne mit einem Deckel verschließen und das ganze bei geringer Hitze kochen lassen.\r\n7.	Parallel etwas Reis in einem Topf bis zum Gar punkt kochen lassen.\r\n8.	Sobald der Reis den Gar punkt erreicht hat können sie ihn zu dem Chili in die Pfanne geben. \r\n9.	Jetzt können Sie das Chili nach belieben würzen (Wir empfehlen hier Cayenne Pfeffer, Siracha Sauce , Salz 	und Pfeffer).\r\n'),
+(1, 'Hamburger', '3', '1.	Das Hackfleisch in eine Schüssel geben. Das Ei dazu geben.\r\n2.	Nun würzen wir das Hackfleisch mit etwas Senf, Maggi, Salz, Pfeffer, Chili-Gewürz und Paprika. \r\nDas ganze mit einem Mixer mit Knethaken verführen. \r\n3.	In der Zwischenzeit können Sie 2 Pfannen auf dem Herd mit etwas Öl darin erhitzen.\r\n4.	Sobald die Pfannen heiß sind, nehmen Sie sich eine Handflache voll Hackfleisch und formen daraus eine 	Boulette. Diese legen Sie dann in die heiße Pfanne. Wiederholen Sie diesen Schritt bis das Hackfleisch leer 	ist.\r\n5.	In der Zeit in der die Bouletten in der Pfanne braten schneiden Sie sich die Restlichen Zutaten die Sie auf 	ihrem Burger benötigen zurecht.\r\nHier empfehlen wir Essiggurken, Salat, Zwiebeln, Mozzarella, Tomaten. \r\n6.	Wenn die Boulette fast fertig ist können Sie eine Scheibe Cheddar auf jede Boulette legen und diesen 		zerlaufen lassen. \r\n7.	In der Zwischenzeit können Sie die Brötchen im Toaster einzeln erhitzen. \r\n8.	Sobald der Käse zerlaufen ist können Sie sich ihren Burger anrichten. \r\n'),
+(2, 'Tomatensuppe', '4', '1.	Die Tomaten waschen, vom Strunk befreien und in Achtel schneiden.\r\n2.	Bei geringer Hitze mit geschlossenem Deckel eine Stunde köcheln lassen. \r\n3.	Mit einem Pürierstab die Tomaten fein pürieren. Danach die Flüssigkeit noch durch ein feines Sieb drücken um die Kerne herauszufiltern. \r\n4.	Die Tomatensuppe jetzt noch mit einem Brühwürfel verfeinern etwas Sahne dazu geben und nochmals aufkochen lassen \r\n5.	Wir empfehlen zu der Tomatensuppe ein frisches Baguette. \r\n'),
+(3, 'Hähnchen in Sahnesoße', '4', '1.	Eine Pfanne erhitzen und die Hähnchenbrust von beiden Seiten scharf anbraten\r\n2.	In der Zeit einen Topf mit Wasser erhitzen, etwas salzen und zum Kochen bringen.\r\n3.	Die Nudeln darin ca. 12 min kochen lassen. \r\n4.	Die Hähnchenbrust-Filets aus der Pfanne nehmen und in Streifen schneiden. Danach wieder in die Pfanne geben und nochmals scharf anbraten lassen \r\n5.	Die Filets mit Salz Pfeffer Chili und Paprika würzen. Die Sahne dazu geben und 15min kochen lassen. ( Wer mag kann ebenfalls einen Schuss Weißwein hinzu geben ) \r\n6.	Die Filets nochmals mit Salz und Pfeffer würzen. \r\n7.	Die Nudeln abkippen und in die Sahne füllen. \r\n8.	Nochmals umrühren und genießen.\r\n'),
+(4, 'Milchreis', '3', '1.	Die Milch mit dem Zucker und dem Reis zum Kochen bringen. \r\n2.	Unter ständigem Umrühren die Milch aufkochen lassen.\r\n3.	Bei geringer Hitze und geschlossenem Deckel den Reis ungefähr eine Stunde köcheln lassen. \r\n4.	Nach einer guten Stunde ist der Milchreis essfertig.\r\n5.	Den Milchreis nach belieben mit Zimt und Zucker würzen. \r\n6.	Alternativ kann er auch mit Apfelmus genossen werden. \r\n');
 
 -- --------------------------------------------------------
 
@@ -71,38 +73,46 @@ INSERT INTO `gericht` (`idgericht`, `titel`, `person`) VALUES
 --
 
 CREATE TABLE `rezept` (
-  `idgericht` int(2) NOT NULL,
-  `idzutat` int(3) NOT NULL,
-  `menge` varchar(5) NOT NULL,
-  `mengenangabe` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `idgericht` int(11) NOT NULL,
+  `idzutat` int(11) NOT NULL,
+  `menge` text,
+  `mengenangabe` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `rezept`
 --
 
 INSERT INTO `rezept` (`idgericht`, `idzutat`, `menge`, `mengenangabe`) VALUES
-(0, 2, '	1', '	ganzes'),
-(0, 3, '	350', '	ml'),
-(0, 4, '	1', '	ganzer'),
-(1, 2, '	kg', ''),
-(1, 5, '	2', '	groáe'),
-(1, 6, '	2', '	groáe'),
-(1, 7, '	2', '	2 zehen'),
-(1, 8, '	2', '	groáe'),
-(1, 9, '	1', '	 Dosen (540ml)'),
-(1, 10, '	2', '	Dosen (540ml)'),
-(1, 11, '	2', '	2 Dosen'),
-(1, 12, '	375', '	gramm'),
-(2, 1, '	4', '.'),
-(2, 5, '	2', '.'),
-(2, 13, '	1000', '	gramm'),
-(2, 14, '	9', '.'),
-(2, 15, '	1', '	kleinen'),
-(2, 16, '	1', '	Glas'),
-(2, 17, '	1', '	groáen'),
-(2, 18, '	9', '	Scheiben'),
-(2, 19, '	1', '.');
+(0, 5, '2', 'große'),
+(0, 6, '2', 'große'),
+(0, 7, '2', 'Zehen'),
+(0, 8, '2', 'große'),
+(0, 9, '1', 'Dose (540 ml)'),
+(0, 10, '2', 'Dosen (540 ml)'),
+(0, 11, '2', 'Dosen'),
+(0, 12, '375', 'gramm'),
+(1, 13, '1000', 'gramm'),
+(1, 14, '9', NULL),
+(1, 15, '1', 'kleinen'),
+(1, 16, '1', 'Glas'),
+(1, 17, '1', 'großen'),
+(1, 18, '9', 'Scheiben'),
+(1, 1, '4', NULL),
+(1, 5, '2', NULL),
+(1, 19, '1', NULL),
+(1, 20, NULL, NULL),
+(2, 1, '2', 'kg'),
+(2, 2, '1', 'ganzes'),
+(2, 3, '350', 'ml'),
+(2, 4, '1', 'ganzer'),
+(3, 24, '500', 'gramm'),
+(3, 25, '600', 'gramm'),
+(3, 3, '400', 'ml'),
+(3, 26, NULL, NULL),
+(4, 21, '250', 'gramm'),
+(4, 22, '1', 'liter'),
+(4, 23, '3', 'Esslöffel');
 
 -- --------------------------------------------------------
 
@@ -121,8 +131,7 @@ CREATE TABLE `unvertraeglichkeiten` (
 
 INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkeitenbezeichnung`) VALUES
 (0, 'Laktoseintolerant'),
-(1, 'Glutenunverträglich'),
-(2, 'Alles');
+(1, 'Glutenunverträglich');
 
 -- --------------------------------------------------------
 
@@ -132,7 +141,7 @@ INSERT INTO `unvertraeglichkeiten` (`idunvertraeglichkeiten`, `unvertraeglichkei
 
 CREATE TABLE `zutat` (
   `idzutat` int(11) NOT NULL,
-  `bezeichnung` varchar(50) NOT NULL
+  `bezeichnung` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -140,26 +149,32 @@ CREATE TABLE `zutat` (
 --
 
 INSERT INTO `zutat` (`idzutat`, `bezeichnung`) VALUES
-(0, 'Baguette'),
-(1, 'Sahne'),
-(2, 'Brühwürfel'),
-(3, 'Zwiebel'),
-(4, 'Paprika'),
-(5, 'Knoblauch'),
-(6, 'Chili'),
-(7, 'Kidneybohnen'),
-(8, 'Goldmais'),
-(9, 'Tomaten passiert'),
-(10, 'Reis'),
-(11, 'Hackfleisch'),
-(12, 'Hamburgerbrötchen'),
-(13, 'Salatkopf'),
-(14, 'Gewürzgurken'),
-(15, 'Mozarella'),
-(16, 'Cheddar'),
-(17, 'Ei'),
-(18, 'Maggi'),
-(19, 'Tomaten');
+(1, 'Tomaten'),
+(2, 'Baguette'),
+(3, 'Sahne'),
+(4, 'Brühwürfel'),
+(5, 'Zwiebel'),
+(6, 'Paprika'),
+(7, 'Knoblauch'),
+(8, 'Chili'),
+(9, 'Kidneybohnen'),
+(10, 'Goldmais'),
+(11, 'Tomaten passiert'),
+(12, 'Reis'),
+(13, 'Hackfleisch'),
+(14, 'Hamburgerbrötchen'),
+(15, 'Salatkopf'),
+(16, 'Gewürzgurken'),
+(17, 'Mozarella'),
+(18, 'Cheddar'),
+(19, 'Ei'),
+(20, 'Maggi'),
+(21, 'Milchreis'),
+(22, 'Milch'),
+(23, 'Zucker'),
+(24, 'Hähnchenbrustfilet'),
+(25, 'Fettucine (Nudeln)'),
+(26, 'Weißwein');
 
 --
 -- Indizes der exportierten Tabellen
@@ -176,13 +191,6 @@ ALTER TABLE `essensgewohnheiten`
 --
 ALTER TABLE `gericht`
   ADD PRIMARY KEY (`idgericht`);
-
---
--- Indizes für die Tabelle `rezept`
---
-ALTER TABLE `rezept`
-  ADD KEY `idgericht` (`idgericht`),
-  ADD KEY `idzutat` (`idzutat`);
 
 --
 -- Indizes für die Tabelle `unvertraeglichkeiten`
@@ -204,36 +212,25 @@ ALTER TABLE `zutat`
 -- AUTO_INCREMENT für Tabelle `essensgewohnheiten`
 --
 ALTER TABLE `essensgewohnheiten`
-  MODIFY `idessensgewohnheiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idessensgewohnheiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
 --
 ALTER TABLE `gericht`
-  MODIFY `idgericht` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idgericht` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `unvertraeglichkeiten`
 --
 ALTER TABLE `unvertraeglichkeiten`
-  MODIFY `idunvertraeglichkeiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idunvertraeglichkeiten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `zutat`
 --
 ALTER TABLE `zutat`
-  MODIFY `idzutat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- Constraints der exportierten Tabellen
---
-
---
--- Constraints der Tabelle `rezept`
---
-ALTER TABLE `rezept`
-  ADD CONSTRAINT `rezept_ibfk_1` FOREIGN KEY (`idgericht`) REFERENCES `gericht` (`idgericht`),
-  ADD CONSTRAINT `rezept_ibfk_2` FOREIGN KEY (`idzutat`) REFERENCES `zutat` (`idzutat`);
+  MODIFY `idzutat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -121,7 +121,7 @@ var unvertraeglichkeitenliste;
        zutatenliste = new Array(result.length);
         for (var i = 0; i < result.length; i++) {
           bezeichnung[i] = result[i].bezeichnung;
-          zutatenliste[i] = new Zutat(i, result[i].bezeichnung);
+          zutatenliste[i] = new Zutat(i+1, result[i].bezeichnung);
           /*console.log("Zutatbezeichnng" + i +": " + bezeichnung[i])*/
           console.log("Zutat " + zutatenliste[i].id + " : " + zutatenliste[i].bezeichnung);
         };
@@ -141,7 +141,7 @@ var unvertraeglichkeitenliste;
           mengenangabe[i] = result[i].mengenangabe;
           for (var k = 0; k < gerichte.length; k++) {
               if (gerichte[k].nummer == result[i].idgericht) {
-              gerichte[k].addZutat(new Zutathinzu(result[i].idzutat, zutatenliste[result[i].idzutat].bezeichnung.toUpperCase(), result[i].menge, result[i].mengenangabe));
+              gerichte[k].addZutat(new Zutathinzu(result[i].idzutat, zutatenliste[result[i].idzutat-1].bezeichnung.toUpperCase(), result[i].menge, result[i].mengenangabe));
             }
           }
           /*console.log("Rezept:" + idgericht[i] + "," + idzutat[i] + "," + menge[i] + "," + mengenangabe[i]);*/
